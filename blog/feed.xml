@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Fire Emblem Shadows Blog</title>
+        <link>https://fireemblemshadows.online/blog/</link>
+        <description>Latest guides, strategies, and updates for Fire Emblem Shadows mobile social deduction gameplay</description>
+        <language>en-us</language>
+        <pubDate>Wed, 25 Sep 2025 00:00:00 +0000</pubDate>
+        <lastBuildDate>Wed, 25 Sep 2025 00:00:00 +0000</lastBuildDate>
+        <atom:link href="https://fireemblemshadows.online/blog/feed.xml" rel="self" type="application/rss+xml" />
+        
+        <item>
+            <title>Fix "stuck on loading" &amp; download errors in Fire Emblem Shadows (iOS/Android)</title>
+            <link>https://fireemblemshadows.online/blog/fix-stuck-loading-download-errors.html</link>
+            <description>Complete troubleshooting guide for iOS and Android download issues including region availability, storage problems, and network connectivity solutions.</description>
+            <pubDate>Wed, 25 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://fireemblemshadows.online/blog/fix-stuck-loading-download-errors.html</guid>
+        </item>
+        
+        <item>
+            <title>Voting strategies for Fire Emblem Shadows — Disciple of Shadow tells &amp; team trust</title>
+            <link>https://fireemblemshadows.online/blog/voting-strategies-disciple-of-shadow.html</link>
+            <description>Master social deduction mechanics with advanced voting strategies, behavioral analysis techniques, and methods to build team trust while identifying infiltrators.</description>
+            <pubDate>Tue, 24 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://fireemblemshadows.online/blog/voting-strategies-disciple-of-shadow.html</guid>
+        </item>
+        
+        <item>
+            <title>Best beginner team comps for Fire Emblem Shadows (3-ally squads)</title>
+            <link>https://fireemblemshadows.online/blog/best-beginner-team-comps.html</link>
+            <description>Essential team composition guide featuring starter-friendly squad templates, role synergy basics, and positioning fundamentals for new players.</description>
+            <pubDate>Mon, 23 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://fireemblemshadows.online/blog/best-beginner-team-comps.html</guid>
+        </item>
+        
+        <item>
+            <title>Bazaar trading in Fire Emblem Shadows — gold economy, safe trades &amp; value list</title>
+            <link>https://fireemblemshadows.online/blog/bazaar-trading-gold-economy-guide.html</link>
+            <description>Comprehensive bazaar economy guide covering currency management, safe trading practices, value optimization, and weekly price tracking for maximum profit.</description>
+            <pubDate>Sun, 22 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://fireemblemshadows.online/blog/bazaar-trading-gold-economy-guide.html</guid>
+        </item>
+        
+        <item>
+            <title>Fire Emblem Shadows vs. Fire Emblem Echoes: Shadows of Valentia — what's the difference?</title>
+            <link>https://fireemblemshadows.online/blog/shadows-vs-shadows-of-valentia.html</link>
+            <description>Clear disambiguation between the mobile social deduction game and the 3DS tactical RPG, including platform differences and gameplay mechanics.</description>
+            <pubDate>Sat, 21 Sep 2025 00:00:00 +0000</pubDate>
+            <guid>https://fireemblemshadows.online/blog/shadows-vs-shadows-of-valentia.html</guid>
+        </item>
+    </channel>
+</rss>

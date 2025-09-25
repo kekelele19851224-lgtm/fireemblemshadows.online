@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Shadows Blog — Guides, Tips & Updates</title>
+    <meta name="description" content="Latest Fire Emblem Shadows guides, strategies, and updates for mobile social deduction gameplay.">
+    <link rel="canonical" href="/blog/">
+    <link rel="alternate" type="application/rss+xml" href="/blog/feed.xml" title="Fire Emblem Shadows Blog RSS">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Blog-specific styles with .blog- prefix */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .blog-hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .blog-hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blog-breadcrumb {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 8px 0 12px;
+        }
+
+        .blog-breadcrumb a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .blog-section {
+            padding: 3rem 0;
+        }
+
+        .blog-posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blog-post-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .blog-post-card:hover, .blog-post-card:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .blog-post-title {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.3;
+        }
+
+        .blog-post-date {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 1rem;
+        }
+
+        .blog-post-excerpt {
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        .blog-rss-link {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 12px 24px;
+            background: var(--accent);
+            color: #000;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+
+        .blog-rss-link:hover, .blog-rss-link:focus {
+            background: #C4A532;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        .footer-sep {
+            margin: 0 0.5rem;
+            opacity: 0.7;
+        }
+
+        .footer-sep + a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-sep + a:hover, .footer-sep + a:focus {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-hero {
+                padding: 2rem 0;
+            }
+            
+            .blog-section {
+                padding: 2rem 0;
+            }
+            
+            .blog-posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/blog/" class="nav-link" title="Fire Emblem Shadows Blog">Blog</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <nav aria-label="Breadcrumb" class="blog-breadcrumb">
+            <div class="blog-container">
+                <a href="/index.html">Home</a> ›
+                <span aria-current="page">Blog</span>
+            </div>
+        </nav>
+        
+        <section class="blog-hero">
+            <div class="blog-container">
+                <h1>Fire Emblem Shadows Blog</h1>
+                <p class="blog-hero-subtitle">Latest guides, strategies, and updates for mobile social deduction gameplay</p>
+            </div>
+        </section>
+
+        <section class="blog-section">
+            <div class="blog-container">
+                <div class="blog-posts-grid">
+                    <a href="/blog/fix-stuck-loading-download-errors.html" class="blog-post-card">
+                        <h2 class="blog-post-title">Fix "stuck on loading" & download errors in Fire Emblem Shadows</h2>
+                        <div class="blog-post-date">September 25, 2025</div>
+                        <p class="blog-post-excerpt">Complete troubleshooting guide for iOS and Android download issues including region availability, storage problems, and network connectivity solutions.</p>
+                    </a>
+
+                    <a href="/blog/voting-strategies-disciple-of-shadow.html" class="blog-post-card">
+                        <h2 class="blog-post-title">Voting strategies for Fire Emblem Shadows — Disciple of Shadow tells & team trust</h2>
+                        <div class="blog-post-date">September 24, 2025</div>
+                        <p class="blog-post-excerpt">Master social deduction mechanics with advanced voting strategies, behavioral analysis techniques, and methods to build team trust while identifying infiltrators.</p>
+                    </a>
+
+                    <a href="/blog/best-beginner-team-comps.html" class="blog-post-card">
+                        <h2 class="blog-post-title">Best beginner team comps for Fire Emblem Shadows (3-ally squads)</h2>
+                        <div class="blog-post-date">September 23, 2025</div>
+                        <p class="blog-post-excerpt">Essential team composition guide featuring starter-friendly squad templates, role synergy basics, and positioning fundamentals for new players.</p>
+                    </a>
+
+                    <a href="/blog/bazaar-trading-gold-economy-guide.html" class="blog-post-card">
+                        <h2 class="blog-post-title">Bazaar trading in Fire Emblem Shadows — gold economy, safe trades & value list</h2>
+                        <div class="blog-post-date">September 22, 2025</div>
+                        <p class="blog-post-excerpt">Comprehensive bazaar economy guide covering currency management, safe trading practices, value optimization, and weekly price tracking for maximum profit.</p>
+                    </a>
+
+                    <a href="/blog/shadows-vs-shadows-of-valentia.html" class="blog-post-card">
+                        <h2 class="blog-post-title">Fire Emblem Shadows vs. Fire Emblem Echoes: Shadows of Valentia — what's the difference?</h2>
+                        <div class="blog-post-date">September 21, 2025</div>
+                        <p class="blog-post-excerpt">Clear disambiguation between the mobile social deduction game and the 3DS tactical RPG, including platform differences and gameplay mechanics.</p>
+                    </a>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="/blog/feed.xml" class="blog-rss-link">🔗 Subscribe to RSS Feed</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="blog-container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+                <span class="footer-sep">·</span>
+                <a href="/blog/" title="Fire Emblem Shadows Blog">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/index.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "/blog/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+        });
+
+        // Internal link click tracking
+        document.addEventListener('click', e => {
+            const a = e.target.closest('a[href]');
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(url.origin === location.origin){ // internal
+                console.log('internal_link_click', {href:url.pathname + url.hash, text:a.textContent.trim()});
+            }
+        });
+
+        // Blog link auto-highlight
+        (function(){
+            var blogLink = document.querySelector('nav a[href="/blog/"]');
+            if(!blogLink) return;
+            var p = location.pathname;
+            if (p === '/blog/' || p.startsWith('/blog/')) {
+                blogLink.setAttribute('aria-current','page');
+            }
+        })();
+    </script>
+</body>
+</html>

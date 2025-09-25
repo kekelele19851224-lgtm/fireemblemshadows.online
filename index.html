@@ -468,6 +468,7 @@
                     </div>
                 </li>
                 <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/blog/" class="nav-link" title="Fire Emblem Shadows Blog">Blog</a></li>
                 <li><a href="/updates.html" class="nav-link">Updates</a></li>
             </ul>
             <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
@@ -689,6 +690,8 @@
             <p class="footer-disclaimer">
                 Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
                 This unofficial guide is created by fans for educational and informational purposes.
+                <span class="footer-sep">·</span>
+                <a href="/blog/" title="Fire Emblem Shadows Blog">Blog</a>
             </p>
         </div>
     </footer>
@@ -900,8 +903,19 @@
     </style>
 
     <script>
-      // Simple sanity check: should log true, "function"
-      console.log('GA4 installed:', !!window.dataLayer, typeof window.gtag);
+        // Simple sanity check: should log true, "function"
+        console.log('GA4 installed:', !!window.dataLayer, typeof window.gtag);
+    </script>
+
+    <script>
+      (function(){
+        var blogLink = document.querySelector('nav a[href="/blog/"]');
+        if(!blogLink) return;
+        var p = location.pathname;
+        if (p === '/blog/' || p.startsWith('/blog/')) {
+          blogLink.setAttribute('aria-current','page');
+        }
+      })();
     </script>
 </body>
 </html>

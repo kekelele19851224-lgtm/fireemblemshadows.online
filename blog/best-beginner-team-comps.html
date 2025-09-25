@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Best beginner team comps for Fire Emblem Shadows (3-ally squads)</title>
+    <meta name="description" content="Essential Fire Emblem Shadows team composition guide with starter-friendly squad templates, role synergy basics, and positioning fundamentals.">
+    <link rel="canonical" href="/blog/best-beginner-team-comps.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Blog-specific styles with .blog- prefix */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .blog-breadcrumb {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 8px 0 12px;
+        }
+
+        .blog-breadcrumb a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .blog-hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .blog-content {
+            padding: 3rem 0;
+        }
+
+        .blog-content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .blog-content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .blog-content p {
+            margin: 1rem 0;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .blog-content li {
+            margin: 0.5rem 0;
+        }
+
+        .blog-content a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        .blog-content a:hover, .blog-content a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .blog-figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .blog-figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .blog-figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .blog-comp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blog-comp-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+        }
+
+        .blog-comp-title {
+            color: var(--accent);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .blog-comp-roles {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .blog-tip {
+            background: rgba(52, 168, 83, 0.1);
+            border: 1px solid rgba(52, 168, 83, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .blog-warning {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .blog-related {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .blog-related h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            display: block;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: var(--card, rgba(255,255,255,.04));
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .blog-card:hover, .blog-card:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .blog-card h3 {
+            margin: 0 0 4px;
+            color: var(--accent);
+        }
+
+        .blog-card p {
+            margin: 0;
+            opacity: .9;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        .footer-sep {
+            margin: 0 0.5rem;
+            opacity: 0.7;
+        }
+
+        .footer-sep + a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-sep + a:hover, .footer-sep + a:focus {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Ad slot: consistent spacing, avoid CLS, responsive width */
+        .ad-slot{
+            width:100%;
+            min-height:280px;
+            margin:20px 0 8px;
+            display:block;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,.08);
+            background:var(--card, rgba(255,255,255,.04));
+        }
+        @media (min-width:1024px){
+            .ad-slot{ min-height:300px; margin:28px 0 12px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-hero {
+                padding: 2rem 0;
+            }
+            
+            .blog-content {
+                padding: 2rem 0;
+            }
+            
+            .blog-card-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-comp-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/blog/" class="nav-link" title="Fire Emblem Shadows Blog">Blog</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <nav aria-label="Breadcrumb" class="blog-breadcrumb">
+            <div class="blog-container">
+                <a href="/index.html">Home</a> ›
+                <a href="/blog/">Blog</a> ›
+                <span aria-current="page">Team Compositions</span>
+            </div>
+        </nav>
+        
+        <section class="blog-hero">
+            <div class="blog-container">
+                <h1>Best beginner team comps for Fire Emblem Shadows (3-ally squads)</h1>
+                <div class="blog-meta">September 23, 2025 • 9 min read</div>
+                
+                <figure class="blog-figure">
+                    <svg width="300" height="150" viewBox="0 0 300 150" role="img" aria-labelledby="team-title">
+                        <title id="team-title">Three-ally squad formation triangle</title>
+                        <rect width="300" height="150" fill="rgba(212, 175, 55, 0.1)" rx="8"/>
+                        
+                        <!-- Triangle formation -->
+                        <circle cx="150" cy="40" r="20" fill="rgba(220, 38, 38, 0.3)" stroke="#DC2626" stroke-width="2"/>
+                        <text x="150" y="45" text-anchor="middle" fill="#DC2626" font-size="11" font-weight="600">Tank</text>
+                        
+                        <circle cx="100" cy="110" r="20" fill="rgba(37, 99, 235, 0.3)" stroke="#2563EB" stroke-width="2"/>
+                        <text x="100" y="115" text-anchor="middle" fill="#2563EB" font-size="11" font-weight="600">DPS</text>
+                        
+                        <circle cx="200" cy="110" r="20" fill="rgba(52, 168, 83, 0.3)" stroke="#34A853" stroke-width="2"/>
+                        <text x="200" y="115" text-anchor="middle" fill="#34A853" font-size="11" font-weight="600">Support</text>
+                        
+                        <!-- Connection lines -->
+                        <line x1="135" y1="55" x2="115" y2="95" stroke="#E5E7EB" stroke-width="2"/>
+                        <line x1="165" y1="55" x2="185" y2="95" stroke="#E5E7EB" stroke-width="2"/>
+                        <line x1="120" y1="110" x2="180" y2="110" stroke="#E5E7EB" stroke-width="2"/>
+                        
+                        <text x="150" y="140" text-anchor="middle" fill="#E5E7EB" font-size="12" font-weight="600">Balanced Formation</text>
+                    </svg>
+                    <figcaption>Classic 3-ally squad triangle formation for Fire Emblem Shadows</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="blog-container">
+                <p>Building effective team compositions in Fire Emblem Shadows requires understanding role synergy, positioning fundamentals, and the unique challenges of 3-ally squad dynamics. Unlike traditional Fire Emblem titles with large armies, the focused team size demands every member contribute meaningfully to both combat effectiveness and social deduction success. This guide covers beginner-friendly compositions that excel in early encounters while building skills for advanced play.</p>
+
+                <h2>Understanding Role Archetypes</h2>
+                
+                <p>Fire Emblem Shadows features four primary role archetypes that define team composition strategies. The <a href="/teams-gear.html">complete teams and gear guide</a> provides deeper mechanical details, but understanding basic role functions helps new players build synergistic squads.</p>
+
+                <h3>Frontliner (Tank) Role</h3>
+                
+                <p>Frontliners absorb damage and control enemy positioning while providing team protection. Effective tank play requires understanding threat assessment and positioning for optimal team support.</p>
+
+                <div class="blog-tip">
+                    <p><strong>Beginner Tip:</strong> Position your frontliner between enemies and squishier allies, but maintain mobility for tactical retreats when overwhelmed.</p>
+                </div>
+
+                <ul>
+                    <li><strong>Primary function:</strong> Damage absorption and enemy engagement</li>
+                    <li><strong>Key attributes:</strong> High health, defensive abilities, crowd control</li>
+                    <li><strong>Positioning:</strong> Front-center to maximize protection coverage</li>
+                    <li><strong>Early gear priority:</strong> Defensive equipment and health boosters</li>
+                </ul>
+
+                <h3>Damage Dealer (DPS) Roles</h3>
+                
+                <p>Damage dealers focus on eliminating threats quickly while maintaining positional awareness. Fire Emblem Shadows offers both burst damage and sustained damage specializations.</p>
+
+                <ul>
+                    <li><strong>Burst specialists:</strong> High single-target damage for priority elimination</li>
+                    <li><strong>Area specialists:</strong> Multi-target abilities for group engagement</li>
+                    <li><strong>Positioning priority:</strong> Protected angles with clear target access</li>
+                    <li><strong>Gear focus:</strong> Offensive equipment and ability enhancement</li>
+                </ul>
+
+                <h3>Support and Control Roles</h3>
+                
+                <p>Support characters provide healing, buffs, and tactical abilities that multiply team effectiveness. Control specialists focus on enemy manipulation and battlefield advantage.</p>
+
+                <figure class="blog-figure">
+                    <svg width="320" height="120" viewBox="0 0 320 120" role="img" aria-labelledby="roles-title">
+                        <title id="roles-title">Role synergy interaction diagram</title>
+                        <rect width="320" height="120" fill="rgba(37, 99, 235, 0.1)" rx="6"/>
+                        
+                        <!-- Role boxes -->
+                        <rect x="20" y="20" width="60" height="80" fill="rgba(220, 38, 38, 0.3)" rx="4"/>
+                        <text x="50" y="50" text-anchor="middle" fill="#DC2626" font-size="10" font-weight="600">TANK</text>
+                        <text x="50" y="65" text-anchor="middle" fill="#DC2626" font-size="8">Protects</text>
+                        <text x="50" y="77" text-anchor="middle" fill="#DC2626" font-size="8">Controls</text>
+                        <text x="50" y="89" text-anchor="middle" fill="#DC2626" font-size="8">Position</text>
+                        
+                        <rect x="130" y="20" width="60" height="80" fill="rgba(37, 99, 235, 0.3)" rx="4"/>
+                        <text x="160" y="50" text-anchor="middle" fill="#2563EB" font-size="10" font-weight="600">DPS</text>
+                        <text x="160" y="65" text-anchor="middle" fill="#2563EB" font-size="8">Eliminates</text>
+                        <text x="160" y="77" text-anchor="middle" fill="#2563EB" font-size="8">Threats</text>
+                        <text x="160" y="89" text-anchor="middle" fill="#2563EB" font-size="8">Quickly</text>
+                        
+                        <rect x="240" y="20" width="60" height="80" fill="rgba(52, 168, 83, 0.3)" rx="4"/>
+                        <text x="270" y="50" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">SUPPORT</text>
+                        <text x="270" y="65" text-anchor="middle" fill="#34A853" font-size="8">Enhances</text>
+                        <text x="270" y="77" text-anchor="middle" fill="#34A853" font-size="8">Team</text>
+                        <text x="270" y="89" text-anchor="middle" fill="#34A853" font-size="8">Effectiveness</text>
+                        
+                        <!-- Arrows showing interaction -->
+                        <path d="M80 60 L130 60" stroke="#E5E7EB" stroke-width="1" fill="none"/>
+                        <path d="M190 60 L240 60" stroke="#E5E7EB" stroke-width="1" fill="none"/>
+                    </svg>
+                    <figcaption>How different roles support each other in Fire Emblem Shadows combat</figcaption>
+                </figure>
+
+                <h2>Beginner-Friendly Team Templates</h2>
+                
+                <p>These four team compositions provide excellent starting points for new players, offering strong performance while teaching fundamental strategic concepts. Each template includes specific role assignments and basic tactical approaches.</p>
+
+                <div class="blog-comp-grid">
+                    <div class="blog-comp-card">
+                        <div class="blog-comp-title">Balanced Core</div>
+                        <div class="blog-comp-roles">Tank + DPS + Healer</div>
+                        <p>The most forgiving composition for new players, offering strong survivability and straightforward tactical decisions. This setup provides excellent learning opportunities for positioning and ability timing.</p>
+                        <p><strong>Strengths:</strong> High survivability, clear role definition, easy coordination</p>
+                        <p><strong>Weaknesses:</strong> Lower burst potential, vulnerable to control effects</p>
+                    </div>
+
+                    <div class="blog-comp-card">
+                        <div class="blog-comp-title">Aggressive Rush</div>
+                        <div class="blog-comp-roles">Tank + Burst DPS + Area DPS</div>
+                        <p>Fast-paced composition focusing on quick enemy elimination before they can establish advantages. Requires good timing and positioning but offers exciting gameplay.</p>
+                        <p><strong>Strengths:</strong> High damage output, fast encounter resolution, momentum control</p>
+                        <p><strong>Weaknesses:</strong> Low sustainability, requires precise execution</p>
+                    </div>
+
+                    <div class="blog-comp-card">
+                        <div class="blog-comp-title">Control Focus</div>
+                        <div class="blog-comp-roles">Tank + Control + Support</div>
+                        <p>Defensive composition that wins through battlefield manipulation and sustained advantage. Excellent for learning advanced tactical concepts and enemy behavior patterns.</p>
+                        <p><strong>Strengths:</strong> Excellent sustainability, strong vs. multiple enemies, tactical flexibility</p>
+                        <p><strong>Weaknesses:</strong> Slower encounters, requires patience and planning</p>
+                    </div>
+
+                    <div class="blog-comp-card">
+                        <div class="blog-comp-title">Hybrid Mobility</div>
+                        <div class="blog-comp-roles">Mobile Tank + Skirmisher + Utility</div>
+                        <p>Advanced composition emphasizing movement and positioning flexibility. Best for players comfortable with basic mechanics who want to explore dynamic tactics.</p>
+                        <p><strong>Strengths:</strong> High adaptability, strong positioning options, engagement flexibility</p>
+                        <p><strong>Weaknesses:</strong> Complex coordination, requires experience for optimization</p>
+                    </div>
+                </div>
+
+                <h2>Positioning Fundamentals</h2>
+                
+                <p>Effective positioning amplifies team composition strengths while minimizing vulnerabilities. Understanding basic formation principles helps teams maximize their tactical advantages regardless of specific roles.</p>
+
+                <h3>Triangle Formation Basics</h3>
+                
+                <p>The classic triangle formation provides optimal protection distribution while maintaining offensive flexibility. This formation works well with most team compositions and adapts easily to different encounter types.</p>
+
+                <div class="blog-warning">
+                    <p><strong>Positioning Warning:</strong> Avoid clustering all members together, as area attacks can devastate grouped teams. Maintain sufficient spacing for tactical flexibility.</p>
+                </div>
+
+                <h3>Adaptive Positioning</h3>
+                
+                <p>Advanced teams modify their formations based on encounter specifics and enemy compositions. Learning when to adjust positioning separates competent teams from exceptional ones.</p>
+
+                <h2>Ability Timing and Coordination</h2>
+                
+                <p>Fire Emblem Shadows emphasizes real-time coordination that requires practice and communication. Understanding ability timing fundamentals helps teams maximize their effectiveness without requiring perfect execution.</p>
+
+                <h3>Ability Priority Systems</h3>
+                
+                <p>Establishing clear ability usage priorities prevents wasted resources and ensures optimal team performance. These priority systems adapt to different encounter phases and team compositions.</p>
+
+                <ol>
+                    <li><strong>Emergency healing:</strong> Always prioritize saving critically injured allies</li>
+                    <li><strong>Threat elimination:</strong> Focus high-damage enemies before they can act</li>
+                    <li><strong>Positioning abilities:</strong> Use movement and control when tactical advantage is available</li>
+                    <li><strong>Damage optimization:</strong> Coordinate burst damage for maximum efficiency</li>
+                </ol>
+
+                <h3>Communication Patterns</h3>
+                
+                <p>Effective teams develop communication shortcuts that convey tactical information quickly without overwhelming discussion channels. Clear communication becomes especially important during social deduction phases.</p>
+
+                <h2>Gear Priorities for Beginners</h2>
+                
+                <p>Understanding early game gear priorities helps new teams optimize their effectiveness without requiring extensive <a href="/bazaar.html">bazaar trading</a> knowledge. Focus on these foundational equipment choices before exploring advanced optimization.</p>
+
+                <h3>Essential Gear Categories</h3>
+                
+                <p>New players should prioritize gear that provides immediate, obvious benefits rather than complex interactions that require deep game knowledge to utilize effectively.</p>
+
+                <ul>
+                    <li><strong>Health and defense:</strong> Prioritize survivability over optimization</li>
+                    <li><strong>Ability enhancement:</strong> Focus on improving core abilities rather than adding complexity</li>
+                    <li><strong>Resource management:</strong> Equipment that reduces ability costs or cooldowns</li>
+                    <li><strong>Quality over quantity:</strong> Better gear for fewer members beats mediocre gear for everyone</li>
+                </ul>
+
+                <div class="blog-tip">
+                    <p><strong>Gear Tip:</strong> Upgrade your team's weakest member first rather than making strong members stronger. Eliminate weak links before optimizing advantages.</p>
+                </div>
+
+                <h2>Common Beginner Mistakes</h2>
+                
+                <p>Understanding typical mistakes helps new teams avoid predictable pitfalls that frustrate learning and reduce enjoyment. Most beginner errors stem from overcomplication rather than mechanical failures.</p>
+
+                <h3>Overextension and Aggression</h3>
+                
+                <p>New players often pursue aggressive tactics beyond their coordination capabilities, leading to poor outcomes that discourage continued play. Conservative approaches build confidence and teach fundamental skills.</p>
+
+                <h3>Role Confusion</h3>
+                
+                <p>Teams perform poorly when members don't understand their primary responsibilities or attempt to fulfill multiple roles simultaneously. Clear role definition improves performance dramatically.</p>
+
+                <!-- Adsterra: native/banner widget -->
+                <div class="ad-slot" id="container-cb6b90d40f64ffbf1dba948e66f8aaf3"></div>
+                <script async="async" data-cfasync="false" src="//pl27719199.revenuecpmgate.com/cb6b90d40f64ffbf1dba948e66f8aaf3/invoke.js"></script>
+
+                <h2>Progression and Advanced Concepts</h2>
+                
+                <p>Once teams master basic compositions and coordination, they can explore advanced concepts that separate good teams from exceptional ones. Progression should be gradual to maintain enjoyment while building skills.</p>
+
+                <h3>Composition Flexibility</h3>
+                
+                <p>Advanced teams develop multiple composition options and switch between them based on encounter requirements and team preferences. This flexibility prevents stagnation and maintains engagement.</p>
+
+                <h3>Integration with Social Deduction</h3>
+                
+                <p>Combat performance impacts social deduction success, as effective teams build trust that translates to better voting decisions. Understanding this connection helps teams optimize both gameplay aspects simultaneously.</p>
+
+                <div class="blog-related">
+                    <h2>Continue Your Journey</h2>
+                    <div class="blog-card-grid">
+                        <a class="blog-card" href="/teams-gear.html">
+                            <h3>Advanced Teams & Gear</h3>
+                            <p>Deep dive into character roles, gear optimization, and advanced tactical concepts.</p>
+                        </a>
+                        <a class="blog-card" href="/bazaar.html">
+                            <h3>Bazaar Trading Guide</h3>
+                            <p>Learn how to acquire and optimize gear through effective trading strategies.</p>
+                        </a>
+                        <a class="blog-card" href="/deduction-guide.html">
+                            <h3>Social Deduction</h3>
+                            <p>Master voting mechanics and team trust building for complete gameplay success.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="blog-container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+                <span class="footer-sep">·</span>
+                <a href="/blog/" title="Fire Emblem Shadows Blog">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Best beginner team comps for Fire Emblem Shadows (3-ally squads)",
+                "description": "Essential Fire Emblem Shadows team composition guide with starter-friendly squad templates, role synergy basics, and positioning fundamentals.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "datePublished": "2025-09-23",
+                "dateModified": "2025-09-23",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "/blog/best-beginner-team-comps.html"
+                },
+                "articleSection": "Team Building",
+                "keywords": ["Fire Emblem Shadows", "team compositions", "beginner guide", "roles", "positioning"]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/index.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Team Compositions",
+                        "item": "/blog/best-beginner-team-comps.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+        });
+
+        document.addEventListener('click', e => {
+            const a = e.target.closest('a[href]');
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(url.origin === location.origin){
+                console.log('internal_link_click', {href:url.pathname + url.hash, text:a.textContent.trim()});
+            }
+        });
+
+        // Blog link auto-highlight
+        (function(){
+            var blogLink = document.querySelector('nav a[href="/blog/"]');
+            if(!blogLink) return;
+            var p = location.pathname;
+            if (p === '/blog/' || p.startsWith('/blog/')) {
+                blogLink.setAttribute('aria-current','page');
+            }
+        })();
+    </script>
+</body>
+</html>

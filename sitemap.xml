@@ -47,5 +47,41 @@
     <lastmod>2025-09-25</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-  </url>
+    </url>
+    <url>
+        <loc>https://fireemblemshadows.online/blog/</loc>
+        <lastmod>2025-09-25</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://fireemblemshadows.online/blog/fix-stuck-loading-download-errors.html</loc>
+        <lastmod>2025-09-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fireemblemshadows.online/blog/voting-strategies-disciple-of-shadow.html</loc>
+        <lastmod>2025-09-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fireemblemshadows.online/blog/best-beginner-team-comps.html</loc>
+        <lastmod>2025-09-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fireemblemshadows.online/blog/bazaar-trading-gold-economy-guide.html</loc>
+        <lastmod>2025-09-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://fireemblemshadows.online/blog/shadows-vs-shadows-of-valentia.html</loc>
+        <lastmod>2025-09-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>

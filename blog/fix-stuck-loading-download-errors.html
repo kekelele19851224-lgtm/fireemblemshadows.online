@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fix "stuck on loading" & download errors in Fire Emblem Shadows (iOS/Android)</title>
+    <meta name="description" content="Complete troubleshooting guide for Fire Emblem Shadows download and loading issues on iOS and Android devices with step-by-step solutions.">
+    <link rel="canonical" href="/blog/fix-stuck-loading-download-errors.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Blog-specific styles with .blog- prefix */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .blog-breadcrumb {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 8px 0 12px;
+        }
+
+        .blog-breadcrumb a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .blog-hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .blog-content {
+            padding: 3rem 0;
+        }
+
+        .blog-content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .blog-content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .blog-content p {
+            margin: 1rem 0;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .blog-content li {
+            margin: 0.5rem 0;
+        }
+
+        .blog-content a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        .blog-content a:hover, .blog-content a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .blog-figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .blog-figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .blog-figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .blog-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .blog-warning {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .blog-tip {
+            background: rgba(52, 168, 83, 0.1);
+            border: 1px solid rgba(52, 168, 83, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .blog-related {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .blog-related h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            display: block;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: var(--card, rgba(255,255,255,.04));
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .blog-card:hover, .blog-card:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .blog-card h3 {
+            margin: 0 0 4px;
+            color: var(--accent);
+        }
+
+        .blog-card p {
+            margin: 0;
+            opacity: .9;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        .footer-sep {
+            margin: 0 0.5rem;
+            opacity: 0.7;
+        }
+
+        .footer-sep + a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-sep + a:hover, .footer-sep + a:focus {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Ad slot: consistent spacing, avoid CLS, responsive width */
+        .ad-slot{
+            width:100%;
+            min-height:280px;
+            margin:20px 0 8px;
+            display:block;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,.08);
+            background:var(--card, rgba(255,255,255,.04));
+        }
+        @media (min-width:1024px){
+            .ad-slot{ min-height:300px; margin:28px 0 12px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-hero {
+                padding: 2rem 0;
+            }
+            
+            .blog-content {
+                padding: 2rem 0;
+            }
+            
+            .blog-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/blog/" class="nav-link" title="Fire Emblem Shadows Blog">Blog</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <nav aria-label="Breadcrumb" class="blog-breadcrumb">
+            <div class="blog-container">
+                <a href="/index.html">Home</a> ›
+                <a href="/blog/">Blog</a> ›
+                <span aria-current="page">Download Troubleshooting</span>
+            </div>
+        </nav>
+        
+        <section class="blog-hero">
+            <div class="blog-container">
+                <h1>Fix "stuck on loading" & download errors in Fire Emblem Shadows (iOS/Android)</h1>
+                <div class="blog-meta">September 25, 2025 • 8 min read</div>
+                
+                <figure class="blog-figure">
+                    <svg width="350" height="180" viewBox="0 0 350 180" role="img" aria-labelledby="troubleshoot-title">
+                        <title id="troubleshoot-title">Download troubleshooting workflow diagram</title>
+                        <rect width="350" height="180" fill="rgba(220, 38, 38, 0.1)" rx="12"/>
+                        <circle cx="70" cy="90" r="25" fill="rgba(220, 38, 38, 0.3)" stroke="#DC2626" stroke-width="2"/>
+                        <text x="70" y="96" text-anchor="middle" fill="#DC2626" font-size="12" font-weight="600">Error</text>
+                        <path d="M95 90 L155 90" stroke="#E5E7EB" stroke-width="2" marker-end="url(#fix-arrow)"/>
+                        <rect x="170" y="70" width="60" height="40" fill="rgba(52, 168, 83, 0.3)" stroke="#34A853" stroke-width="2" rx="4"/>
+                        <text x="200" y="88" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">Fix</text>
+                        <text x="200" y="100" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">Steps</text>
+                        <path d="M230 90 L280 90" stroke="#E5E7EB" stroke-width="2" marker-end="url(#fix-arrow)"/>
+                        <circle cx="305" cy="90" r="25" fill="rgba(212, 175, 55, 0.3)" stroke="#D4AF37" stroke-width="2"/>
+                        <text x="305" y="96" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="600">Success</text>
+                        <text x="175" y="160" text-anchor="middle" fill="#E5E7EB" font-size="14" font-weight="600">Troubleshooting Workflow</text>
+                        <defs>
+                            <marker id="fix-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#E5E7EB"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Step-by-step troubleshooting process for Fire Emblem Shadows download and loading issues</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="blog-container">
+                <p>Experiencing download failures or getting stuck on loading screens in Fire Emblem Shadows can be frustrating, especially when you're eager to start playing. This comprehensive troubleshooting guide covers the most common issues affecting both iOS and Android users, with step-by-step solutions to get you back into the game quickly.</p>
+
+                <h2>Common Download and Loading Issues</h2>
+                
+                <p>Fire Emblem Shadows players frequently encounter several specific problems that prevent successful installation or gameplay. Understanding these issues helps identify the right solution faster.</p>
+
+                <div class="blog-warning">
+                    <p><strong>Important:</strong> Always download Fire Emblem Shadows from official sources only. Unofficial APK files or modified versions can cause security issues and permanent account problems.</p>
+                </div>
+
+                <h3>Region Availability Problems</h3>
+                
+                <p>The most common issue is regional availability. Fire Emblem Shadows may not be available in all countries simultaneously, as mobile game releases often roll out gradually across different markets.</p>
+
+                <div class="blog-steps">
+                    <h4>Regional Access Solutions:</h4>
+                    <ol>
+                        <li><strong>Check official announcements:</strong> Visit the <a href="/download.html">official download page</a> for current availability status</li>
+                        <li><strong>Verify your app store region:</strong> Ensure your Apple ID or Google Play account is set to a supported region</li>
+                        <li><strong>Wait for official release:</strong> Avoid changing regions or using VPNs, which can cause account issues</li>
+                        <li><strong>Subscribe to updates:</strong> Follow official channels for release notifications in your area</li>
+                    </ol>
+                </div>
+
+                <h3>Storage and Installation Issues</h3>
+                
+                <p>Fire Emblem Shadows requires significant storage space beyond the initial download size. The game downloads additional assets after installation, which can cause failures if insufficient space is available.</p>
+
+                <figure class="blog-figure">
+                    <svg width="300" height="140" viewBox="0 0 300 140" role="img" aria-labelledby="storage-title">
+                        <title id="storage-title">Storage requirement breakdown visualization</title>
+                        <rect width="300" height="140" fill="rgba(37, 99, 235, 0.1)" rx="8"/>
+                        <rect x="20" y="40" width="80" height="60" fill="rgba(212, 175, 55, 0.3)" rx="4"/>
+                        <text x="60" y="65" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="600">Initial</text>
+                        <text x="60" y="78" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="600">Download</text>
+                        <text x="60" y="91" text-anchor="middle" fill="#D4AF37" font-size="9">1.2 GB</text>
+                        
+                        <text x="150" y="70" text-anchor="middle" fill="#E5E7EB" font-size="20">+</text>
+                        
+                        <rect x="200" y="40" width="80" height="60" fill="rgba(52, 168, 83, 0.3)" rx="4"/>
+                        <text x="240" y="65" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">Additional</text>
+                        <text x="240" y="78" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">Assets</text>
+                        <text x="240" y="91" text-anchor="middle" fill="#34A853" font-size="9">2.1 GB</text>
+                        
+                        <text x="150" y="125" text-anchor="middle" fill="#E5E7EB" font-size="12" font-weight="600">Total: ~3.3 GB Required</text>
+                    </svg>
+                    <figcaption>Fire Emblem Shadows storage requirements including initial download and additional game assets</figcaption>
+                </figure>
+
+                <div class="blog-tip">
+                    <p><strong>Storage Tip:</strong> Free up at least 4GB of space before downloading to account for temporary files and future updates.</p>
+                </div>
+
+                <h3>Network Connectivity Solutions</h3>
+                
+                <p>Unstable internet connections cause many loading screen problems in Fire Emblem Shadows. The game requires consistent connectivity for social deduction features and real-time combat.</p>
+
+                <div class="blog-steps">
+                    <h4>Network Troubleshooting Steps:</h4>
+                    <ol>
+                        <li><strong>Test connection stability:</strong> Try switching between WiFi and mobile data</li>
+                        <li><strong>Restart network equipment:</strong> Power cycle your router if using WiFi</li>
+                        <li><strong>Disable VPN services:</strong> VPNs can interfere with game server connections</li>
+                        <li><strong>Check firewall settings:</strong> Ensure gaming traffic isn't blocked</li>
+                        <li><strong>Use reliable networks:</strong> Avoid public WiFi for initial setup</li>
+                    </ol>
+                </div>
+
+                <h2>iOS-Specific Troubleshooting</h2>
+                
+                <p>iPhone and iPad users may encounter additional issues related to Apple's App Store policies and iOS system requirements.</p>
+
+                <h3>App Store Download Problems</h3>
+                
+                <p>iOS users should verify their device meets minimum requirements and their Apple ID settings allow app downloads. Check the <a href="/download.html#ios">iOS requirements section</a> for detailed compatibility information.</p>
+
+                <ul>
+                    <li><strong>Update iOS:</strong> Ensure you're running iOS 12.0 or later</li>
+                    <li><strong>Clear App Store cache:</strong> Sign out and back into your Apple ID</li>
+                    <li><strong>Check restrictions:</strong> Verify parental controls aren't blocking downloads</li>
+                    <li><strong>Restart device:</strong> A simple restart often resolves temporary glitches</li>
+                </ul>
+
+                <h2>Android-Specific Solutions</h2>
+                
+                <p>Android users have additional troubleshooting options due to the platform's flexibility, but may also encounter device-specific compatibility issues.</p>
+
+                <h3>Google Play Store Issues</h3>
+                
+                <p>Android installation problems often stem from Google Play Services conflicts or insufficient device specifications. Refer to the <a href="/download.html#android">Android requirements guide</a> for compatibility details.</p>
+
+                <div class="blog-steps">
+                    <h4>Android-Specific Fixes:</h4>
+                    <ol>
+                        <li><strong>Clear Google Play cache:</strong> Settings > Apps > Google Play Store > Storage > Clear Cache</li>
+                        <li><strong>Update Play Services:</strong> Ensure Google Play Services is current</li>
+                        <li><strong>Check device compatibility:</strong> Verify 64-bit processor support</li>
+                        <li><strong>Enable Unknown Sources:</strong> Only if downloading from official alternative sources</li>
+                    </ol>
+                </div>
+
+                <h2>Advanced Troubleshooting</h2>
+                
+                <p>If basic solutions don't resolve your Fire Emblem Shadows problems, these advanced techniques can help identify and fix deeper issues.</p>
+
+                <h3>Account and Payment Issues</h3>
+                
+                <p>Some download problems relate to account verification or payment method issues, even for free games. These can prevent initial installation or in-app content downloads.</p>
+
+                <ul>
+                    <li><strong>Verify payment method:</strong> Ensure your payment information is current</li>
+                    <li><strong>Check account status:</strong> Confirm your app store account is in good standing</li>
+                    <li><strong>Review purchase history:</strong> Look for any pending or failed transactions</li>
+                    <li><strong>Contact support:</strong> Reach out to Apple or Google support for account-specific issues</li>
+                </ul>
+
+                <h3>Device Performance Optimization</h3>
+                
+                <p>Older devices may struggle with Fire Emblem Shadows' real-time combat and social features. Optimizing device performance can resolve loading and stability issues.</p>
+
+                <div class="blog-tip">
+                    <p><strong>Performance Tip:</strong> Close all background apps before launching Fire Emblem Shadows to free up RAM for smoother gameplay.</p>
+                </div>
+
+                <h2>When to Seek Additional Help</h2>
+                
+                <p>If these troubleshooting steps don't resolve your Fire Emblem Shadows issues, additional resources are available. The <a href="/faq.html#q-loading">FAQ section</a> covers more specific scenarios, while the community forums provide peer support for uncommon problems.</p>
+
+                <p>For persistent issues that prevent gameplay entirely, consider:</p>
+                
+                <ul>
+                    <li>Documenting error messages or codes for support tickets</li>
+                    <li>Testing on different devices to isolate hardware issues</li>
+                    <li>Checking official social media for widespread outages</li>
+                    <li>Waiting 24-48 hours for temporary server issues to resolve</li>
+                </ul>
+
+                <!-- Adsterra: native/banner widget -->
+                <div class="ad-slot" id="container-cb6b90d40f64ffbf1dba948e66f8aaf1"></div>
+                <script async="async" data-cfasync="false" src="//pl27719199.revenuecpmgate.com/cb6b90d40f64ffbf1dba948e66f8aaf1/invoke.js"></script>
+
+                <div class="blog-related">
+                    <h2>Related Guides</h2>
+                    <div class="blog-card-grid">
+                        <a class="blog-card" href="/download.html">
+                            <h3>Complete Download Guide</h3>
+                            <p>Official links, system requirements, and installation steps for iOS and Android.</p>
+                        </a>
+                        <a class="blog-card" href="/faq.html#q-loading">
+                            <h3>FAQ: Loading Issues</h3>
+                            <p>Quick answers to common loading and connectivity problems.</p>
+                        </a>
+                        <a class="blog-card" href="/what-is.html">
+                            <h3>What is Fire Emblem Shadows</h3>
+                            <p>Learn about the game's features and system requirements before downloading.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="blog-container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+                <span class="footer-sep">·</span>
+                <a href="/blog/" title="Fire Emblem Shadows Blog">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Fix \"stuck on loading\" & download errors in Fire Emblem Shadows (iOS/Android)",
+                "description": "Complete troubleshooting guide for Fire Emblem Shadows download and loading issues on iOS and Android devices with step-by-step solutions.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "datePublished": "2025-09-25",
+                "dateModified": "2025-09-25",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "/blog/fix-stuck-loading-download-errors.html"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "/blog/troubleshoot-hero.svg",
+                    "width": 350,
+                    "height": 180
+                },
+                "articleSection": "Troubleshooting",
+                "keywords": ["Fire Emblem Shadows", "download errors", "loading issues", "iOS", "Android", "troubleshooting"]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/index.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Download Troubleshooting",
+                        "item": "/blog/fix-stuck-loading-download-errors.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+        });
+
+        // Internal link click tracking
+        document.addEventListener('click', e => {
+            const a = e.target.closest('a[href]');
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(url.origin === location.origin){ // internal
+                console.log('internal_link_click', {href:url.pathname + url.hash, text:a.textContent.trim()});
+            }
+        });
+
+        // Blog link auto-highlight
+        (function(){
+            var blogLink = document.querySelector('nav a[href="/blog/"]');
+            if(!blogLink) return;
+            var p = location.pathname;
+            if (p === '/blog/' || p.startsWith('/blog/')) {
+                blogLink.setAttribute('aria-current','page');
+            }
+        })();
+    </script>
+</body>
+</html>

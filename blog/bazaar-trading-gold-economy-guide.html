@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bazaar trading in Fire Emblem Shadows — gold economy, safe trades & value list</title>
+    <meta name="description" content="Master Fire Emblem Shadows bazaar economy with comprehensive trading strategies, value optimization, and weekly price tracking for maximum profit.">
+    <link rel="canonical" href="/blog/bazaar-trading-gold-economy-guide.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        /* Blog-specific styles with .blog- prefix */
+        .blog-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .blog-breadcrumb {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin: 8px 0 12px;
+        }
+
+        .blog-breadcrumb a {
+            color: inherit;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .blog-hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .blog-hero h1 {
+            font-size: clamp(1.6rem, 4vw, 2.4rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+            line-height: 1.2;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            margin-bottom: 2rem;
+        }
+
+        .blog-content {
+            padding: 3rem 0;
+        }
+
+        .blog-content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .blog-content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .blog-content p {
+            margin: 1rem 0;
+        }
+
+        .blog-content ul, .blog-content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .blog-content li {
+            margin: 0.5rem 0;
+        }
+
+        .blog-content a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        .blog-content a:hover, .blog-content a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .blog-figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .blog-figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .blog-figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .blog-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .blog-table th,
+        .blog-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .blog-table th {
+            background: rgba(212, 175, 55, 0.1);
+            font-weight: 600;
+        }
+
+        .blog-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .blog-tip {
+            background: rgba(52, 168, 83, 0.1);
+            border: 1px solid rgba(52, 168, 83, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .blog-warning {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .blog-related {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .blog-related h2 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .blog-card-grid {
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            margin-top: 2rem;
+        }
+
+        .blog-card {
+            display: block;
+            padding: 16px;
+            border-radius: 14px;
+            border: 1px solid rgba(255,255,255,.08);
+            background: var(--card, rgba(255,255,255,.04));
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.2s ease;
+        }
+
+        .blog-card:hover, .blog-card:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .blog-card h3 {
+            margin: 0 0 4px;
+            color: var(--accent);
+        }
+
+        .blog-card p {
+            margin: 0;
+            opacity: .9;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        .footer-sep {
+            margin: 0 0.5rem;
+            opacity: 0.7;
+        }
+
+        .footer-sep + a {
+            color: var(--text);
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
+        }
+
+        .footer-sep + a:hover, .footer-sep + a:focus {
+            opacity: 1;
+            text-decoration: underline;
+        }
+
+        /* Ad slot: consistent spacing, avoid CLS, responsive width */
+        .ad-slot{
+            width:100%;
+            min-height:280px;
+            margin:20px 0 8px;
+            display:block;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,.08);
+            background:var(--card, rgba(255,255,255,.04));
+        }
+        @media (min-width:1024px){
+            .ad-slot{ min-height:300px; margin:28px 0 12px; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .blog-hero {
+                padding: 2rem 0;
+            }
+            
+            .blog-content {
+                padding: 2rem 0;
+            }
+            
+            .blog-card-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/blog/" class="nav-link" title="Fire Emblem Shadows Blog">Blog</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <nav aria-label="Breadcrumb" class="blog-breadcrumb">
+            <div class="blog-container">
+                <a href="/index.html">Home</a> ›
+                <a href="/blog/">Blog</a> ›
+                <span aria-current="page">Bazaar Trading</span>
+            </div>
+        </nav>
+        
+        <section class="blog-hero">
+            <div class="blog-container">
+                <h1>Bazaar trading in Fire Emblem Shadows — gold economy, safe trades & value list</h1>
+                <div class="blog-meta">September 22, 2025 • 11 min read</div>
+                
+                <figure class="blog-figure">
+                    <svg width="350" height="180" viewBox="0 0 350 180" role="img" aria-labelledby="bazaar-title">
+                        <title id="bazaar-title">Bazaar trading and gold economy flow diagram</title>
+                        <rect width="350" height="180" fill="rgba(212, 175, 55, 0.1)" rx="12"/>
+                        
+                        <!-- Gold coin -->
+                        <circle cx="80" cy="90" r="35" fill="rgba(212, 175, 55, 0.3)" stroke="#D4AF37" stroke-width="3"/>
+                        <text x="80" y="95" text-anchor="middle" fill="#D4AF37" font-size="14" font-weight="600">GOLD</text>
+                        
+                        <!-- Arrow to trading -->
+                        <path d="M115 90 L155 90" stroke="#E5E7EB" stroke-width="3" marker-end="url(#trade-arrow)"/>
+                        
+                        <!-- Trading platform -->
+                        <rect x="170" y="65" width="80" height="50" fill="rgba(37, 99, 235, 0.3)" stroke="#2563EB" stroke-width="2" rx="8"/>
+                        <text x="210" y="85" text-anchor="middle" fill="#2563EB" font-size="12" font-weight="600">BAZAAR</text>
+                        <text x="210" y="100" text-anchor="middle" fill="#2563EB" font-size="10">Trading Hub</text>
+                        
+                        <!-- Arrow to gear -->
+                        <path d="M250 90 L285 90" stroke="#E5E7EB" stroke-width="3" marker-end="url(#trade-arrow)"/>
+                        
+                        <!-- Gear/items -->
+                        <circle cx="315" cy="90" r="25" fill="rgba(52, 168, 83, 0.3)" stroke="#34A853" stroke-width="2"/>
+                        <text x="315" y="95" text-anchor="middle" fill="#34A853" font-size="11" font-weight="600">GEAR</text>
+                        
+                        <!-- Value indicators -->
+                        <text x="80" y="140" text-anchor="middle" fill="#E5E7EB" font-size="10">Currency</text>
+                        <text x="210" y="140" text-anchor="middle" fill="#E5E7EB" font-size="10">Exchange</text>
+                        <text x="315" y="140" text-anchor="middle" fill="#E5E7EB" font-size="10">Equipment</text>
+                        
+                        <text x="175" y="165" text-anchor="middle" fill="#E5E7EB" font-size="14" font-weight="600">Economy Flow</text>
+                        
+                        <defs>
+                            <marker id="trade-arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+                                <polygon points="0 0, 10 4, 0 8" fill="#E5E7EB"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Fire Emblem Shadows bazaar economy and trading system overview</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="blog-content">
+            <div class="blog-container">
+                <p>The bazaar economy in Fire Emblem Shadows creates opportunities for strategic resource management that directly impacts combat effectiveness and progression speed. Understanding currency flows, value optimization, and safe trading practices separates efficient players from those struggling with resource limitations. This comprehensive guide covers everything from basic transactions to advanced market analysis for maximizing your economic advantage.</p>
+
+                <h2>Understanding the Gold Economy</h2>
+                
+                <p>Fire Emblem Shadows uses a dynamic economy where gold values fluctuate based on player activity and market conditions. The <a href="/bazaar.html">complete bazaar guide</a> provides detailed mechanics, but understanding fundamental economic principles helps optimize every transaction.</p>
+
+                <h3>Currency Sources and Generation</h3>
+                
+                <p>Gold generation comes from multiple sources that experienced players balance for consistent income. Understanding these sources helps plan long-term economic strategies while maintaining short-term liquidity.</p>
+
+                <ul>
+                    <li><strong>Combat victories:</strong> Primary income source with scaling rewards</li>
+                    <li><strong>Social deduction success:</strong> Bonus payments for correct voting outcomes</li>
+                    <li><strong>Daily objectives:</strong> Guaranteed income through consistent play</li>
+                    <li><strong>Trading profits:</strong> Market arbitrage and value optimization</li>
+                    <li><strong>Achievement rewards:</strong> One-time bonuses for milestone completion</li>
+                </ul>
+
+                <div class="blog-tip">
+                    <p><strong>Economic Tip:</strong> Focus on combat performance first, as it provides the most reliable income source with immediate gameplay benefits.</p>
+                </div>
+
+                <h3>Transaction Fees and Hidden Costs</h3>
+                
+                <p>All bazaar transactions include fees that impact net value calculations. Understanding these costs helps identify truly profitable opportunities while avoiding value traps.</p>
+
+                <table class="blog-table">
+                    <thead>
+                        <tr>
+                            <th>Transaction Type</th>
+                            <th>Base Fee</th>
+                            <th>Additional Costs</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Direct Purchase</td>
+                            <td>5% listing price</td>
+                            <td>None</td>
+                            <td>Simplest option</td>
+                        </tr>
+                        <tr>
+                            <td>Auction Bid</td>
+                            <td>3% final price</td>
+                            <td>Deposit risk</td>
+                            <td>Competitive but risky</td>
+                        </tr>
+                        <tr>
+                            <td>Player Trade</td>
+                            <td>2% total value</td>
+                            <td>Trust requirements</td>
+                            <td>Lowest fees</td>
+                        </tr>
+                        <tr>
+                            <td>Bulk Purchase</td>
+                            <td>4% total order</td>
+                            <td>Storage limits</td>
+                            <td>Volume discounts</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Value Assessment and Market Analysis</h2>
+                
+                <p>Successful bazaar trading requires understanding item values beyond listed prices. Market conditions, demand patterns, and utility assessments determine whether transactions create long-term value or short-term convenience.</p>
+
+                <h3>Essential vs. Luxury Purchases</h3>
+                
+                <p>Distinguishing between essential upgrades and luxury improvements helps prioritize spending for maximum impact. New players should focus exclusively on essentials until they understand advanced value calculations.</p>
+
+                <figure class="blog-figure">
+                    <svg width="320" height="160" viewBox="0 0 320 160" role="img" aria-labelledby="priority-title">
+                        <title id="priority-title">Purchase priority pyramid for optimal value</title>
+                        <rect width="320" height="160" fill="rgba(37, 99, 235, 0.1)" rx="8"/>
+                        
+                        <!-- Priority pyramid -->
+                        <polygon points="160,20 240,70 80,70" fill="rgba(220, 38, 38, 0.3)" stroke="#DC2626" stroke-width="2"/>
+                        <text x="160" y="50" text-anchor="middle" fill="#DC2626" font-size="12" font-weight="600">Essential</text>
+                        
+                        <polygon points="160,70 220,110 100,110" fill="rgba(212, 175, 55, 0.3)" stroke="#D4AF37" stroke-width="2"/>
+                        <text x="160" y="95" text-anchor="middle" fill="#D4AF37" font-size="11" font-weight="600">Beneficial</text>
+                        
+                        <polygon points="160,110 200,140 120,140" fill="rgba(52, 168, 83, 0.3)" stroke="#34A853" stroke-width="2"/>
+                        <text x="160" y="130" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">Luxury</text>
+                        
+                        <text x="160" y="155" text-anchor="middle" fill="#E5E7EB" font-size="12" font-weight="600">Purchase Priority</text>
+                    </svg>
+                    <figcaption>Optimal purchase priority framework for bazaar spending decisions</figcaption>
+                </figure>
+
+                <h3>Essential Purchase Categories</h3>
+                
+                <p>These purchase categories provide immediate, measurable improvements that justify their costs regardless of market conditions. Focus on these areas before exploring optimization opportunities.</p>
+
+                <ol>
+                    <li><strong>Core weapon upgrades:</strong> Direct damage improvements for primary roles</li>
+                    <li><strong>Survivability gear:</strong> Health and defense boosts for team sustainability</li>
+                    <li><strong>Ability enhancement:</strong> Cooldown reduction and effect amplification</li>
+                    <li><strong>Resource management:</strong> Equipment that reduces long-term costs</li>
+                </ol>
+
+                <h2>Safe Trading Practices</h2>
+                
+                <p>Bazaar trading involves risks that experienced players mitigate through established safety protocols. Understanding these practices protects against scams while enabling profitable transactions with trustworthy partners.</p>
+
+                <h3>Fraud Prevention and Recognition</h3>
+                
+                <p>Fraudulent trading attempts target inexperienced players with offers that seem too good to be true. Learning recognition patterns helps avoid costly mistakes while building trading confidence.</p>
+
+                <div class="blog-warning">
+                    <p><strong>Scam Warning:</strong> Never trade valuable items for promises of future payment or "guaranteed" returns. Legitimate traders provide immediate value exchanges.</p>
+                </div>
+
+                <ul>
+                    <li><strong>Pressure tactics:</strong> Artificial urgency to prevent careful consideration</li>
+                    <li><strong>Below-market offers:</strong> Prices significantly below established values</li>
+                    <li><strong>Complex arrangements:</strong> Multi-step trades that obscure actual values</li>
+                    <li><strong>Unverified credentials:</strong> Traders without established reputation or references</li>
+                </ul>
+
+                <h3>Reputation Systems and Trust Building</h3>
+                
+                <p>The bazaar includes reputation systems that help identify reliable trading partners. Building your own reputation creates access to better opportunities while reducing transaction risks.</p>
+
+                <h2>Weekly Price Tracking and Market Cycles</h2>
+                
+                <p>Fire Emblem Shadows markets follow predictable cycles that create profit opportunities for attentive traders. Understanding these patterns helps time purchases and sales for maximum efficiency.</p>
+
+                <h3>Market Cycle Patterns</h3>
+                
+                <p>Weekly market cycles reflect player activity patterns and game update schedules. Tracking these cycles helps predict price movements and identify optimal trading windows.</p>
+
+                <table class="blog-table">
+                    <thead>
+                        <tr>
+                            <th>Day</th>
+                            <th>Market Activity</th>
+                            <th>Price Trends</th>
+                            <th>Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Monday</td>
+                            <td>High volume</td>
+                            <td>Volatile</td>
+                            <td>Opportunity hunting</td>
+                        </tr>
+                        <tr>
+                            <td>Wednesday</td>
+                            <td>Peak activity</td>
+                            <td>Highest prices</td>
+                            <td>Selling valuable items</td>
+                        </tr>
+                        <tr>
+                            <td>Friday</td>
+                            <td>Moderate volume</td>
+                            <td>Stabilizing</td>
+                            <td>Routine purchases</td>
+                        </tr>
+                        <tr>
+                            <td>Sunday</td>
+                            <td>Low activity</td>
+                            <td>Bargain prices</td>
+                            <td>Patient buying</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Update Impact on Markets</h3>
+                
+                <p>Game updates significantly impact market values as new content shifts demand patterns. The <a href="/updates.html">updates timeline</a> helps predict these changes and position for profit opportunities.</p>
+
+                <h2>Advanced Trading Strategies</h2>
+                
+                <p>Experienced traders develop sophisticated strategies that generate consistent profits while supporting their gameplay progression. These techniques require market knowledge and patience but provide substantial economic advantages.</p>
+
+                <h3>Arbitrage Opportunities</h3>
+                
+                <p>Price differences between different market segments create arbitrage opportunities for knowledgeable traders. Understanding these gaps helps generate low-risk profits while providing market liquidity.</p>
+
+                <div class="blog-tip">
+                    <p><strong>Arbitrage Tip:</strong> Focus on items you understand well rather than chasing every price discrepancy. Deep knowledge beats broad speculation.</p>
+                </div>
+
+                <h3>Bulk Trading and Volume Discounts</h3>
+                
+                <p>Large-volume transactions often provide better per-unit pricing while requiring significant capital investment. Understanding volume economics helps optimize purchasing power and storage efficiency.</p>
+
+                <h2>Integration with Team Building</h2>
+                
+                <p>Bazaar success directly supports team effectiveness through better equipment and resource availability. The <a href="/teams-gear.html">team building guide</a> explains how economic advantages translate to combat performance improvements.</p>
+
+                <h3>Coordinated Team Purchases</h3>
+                
+                <p>Teams that coordinate their bazaar activities achieve better overall value through shared resources and bulk purchasing power. This cooperation requires trust and communication but provides significant advantages.</p>
+
+                <h3>Role-Specific Investment Priorities</h3>
+                
+                <p>Different team roles benefit from different investment priorities that experienced teams plan collaboratively. Understanding these priorities helps allocate limited resources for maximum team effectiveness.</p>
+
+                <!-- Adsterra: native/banner widget -->
+                <div class="ad-slot" id="container-cb6b90d40f64ffbf1dba948e66f8aaf4"></div>
+                <script async="async" data-cfasync="false" src="//pl27719199.revenuecpmgate.com/cb6b90d40f64ffbf1dba948e66f8aaf4/invoke.js"></script>
+
+                <h2>Common Economic Mistakes</h2>
+                
+                <p>Understanding typical mistakes helps new traders avoid predictable pitfalls that waste resources and slow progression. Most economic errors stem from impatience rather than lack of information.</p>
+
+                <h3>Overextension and Impulse Purchases</h3>
+                
+                <p>Spending beyond sustainable limits creates economic vulnerability that impacts long-term progression. Conservative approaches build stable foundations for advanced strategies.</p>
+
+                <h3>Value Trap Recognition</h3>
+                
+                <p>Items that appear valuable but provide poor practical utility represent common value traps. Learning to recognize these helps maintain focus on genuinely beneficial purchases.</p>
+
+                <div class="blog-related">
+                    <h2>Economic Mastery</h2>
+                    <div class="blog-card-grid">
+                        <a class="blog-card" href="/bazaar.html">
+                            <h3>Complete Bazaar Guide</h3>
+                            <p>Deep dive into trading mechanics, currency systems, and advanced market strategies.</p>
+                        </a>
+                        <a class="blog-card" href="/teams-gear.html">
+                            <h3>Teams & Gear Optimization</h3>
+                            <p>Learn how economic advantages translate to combat effectiveness and team synergy.</p>
+                        </a>
+                        <a class="blog-card" href="/updates.html">
+                            <h3>Market Impact Updates</h3>
+                            <p>Stay informed about game changes that affect bazaar values and trading opportunities.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="blog-container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+                <span class="footer-sep">·</span>
+                <a href="/blog/" title="Fire Emblem Shadows Blog">Blog</a>
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BlogPosting",
+                "headline": "Bazaar trading in Fire Emblem Shadows — gold economy, safe trades & value list",
+                "description": "Master Fire Emblem Shadows bazaar economy with comprehensive trading strategies, value optimization, and weekly price tracking for maximum profit.",
+                "author": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "datePublished": "2025-09-22",
+                "dateModified": "2025-09-22",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "/blog/bazaar-trading-gold-economy-guide.html"
+                },
+                "articleSection": "Economy",
+                "keywords": ["Fire Emblem Shadows", "bazaar trading", "gold economy", "safe trades", "value optimization"]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/index.html"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Blog",
+                        "item": "/blog/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Bazaar Trading",
+                        "item": "/blog/bazaar-trading-gold-economy-guide.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+        });
+
+        document.addEventListener('click', e => {
+            const a = e.target.closest('a[href]');
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(url.origin === location.origin){
+                console.log('internal_link_click', {href:url.pathname + url.hash, text:a.textContent.trim()});
+            }
+        });
+
+        // Blog link auto-highlight
+        (function(){
+            var blogLink = document.querySelector('nav a[href="/blog/"]');
+            if(!blogLink) return;
+            var p = location.pathname;
+            if (p === '/blog/' || p.startsWith('/blog/')) {
+                blogLink.setAttribute('aria-current','page');
+            }
+        })();
+    </script>
+</body>
+</html>
