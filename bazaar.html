@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Shadows Bazaar — Trading, Currencies & Best-Value Tips</title>
+    <meta name="description" content="Master Fire Emblem Shadows bazaar trading with currency guides, value optimization tips, safety practices, and weekly price tracking.">
+    <link rel="canonical" href="/bazaar.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .content p {
+            margin: 1rem 0;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content li {
+            margin: 0.5rem 0;
+        }
+
+        .content a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        .content a:hover, .content a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            min-width: 44px;
+            min-height: 44px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background: #C4A532;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .currency-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .currency-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .currency-card {
+            background: rgba(212, 175, 55, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .currency-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            background: var(--accent);
+            color: #000;
+        }
+
+        .currency-card h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .value-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .value-card {
+            background: rgba(37, 99, 235, 0.05);
+            border: 1px solid rgba(37, 99, 235, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .value-card.avoid {
+            background: rgba(220, 38, 38, 0.05);
+            border: 1px solid rgba(220, 38, 38, 0.2);
+        }
+
+        .value-card h4 {
+            margin-bottom: 1rem;
+        }
+
+        .value-card.avoid h4 {
+            color: #DC2626;
+        }
+
+        .value-card:not(.avoid) h4 {
+            color: var(--accent-2);
+        }
+
+        .safety-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .safety-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .safety-card {
+            background: rgba(52, 168, 83, 0.05);
+            border: 1px solid rgba(52, 168, 83, 0.2);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .safety-card h4 {
+            color: #34A853;
+            margin-bottom: 1rem;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 2rem 0;
+            background: var(--card);
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border);
+        }
+
+        .price-table th,
+        .price-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .price-table th {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table .price-low {
+            color: #34A853;
+            font-weight: 600;
+        }
+
+        .price-table .price-high {
+            color: #DC2626;
+            font-weight: 600;
+        }
+
+        .price-table .price-stable {
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .next-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .currency-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .safety-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .price-table {
+                font-size: 0.9rem;
+            }
+            
+            .price-table th,
+            .price-table td {
+                padding: 0.75rem;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link" aria-current="page">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <div class="container">
+                <a href="/index.html">Home</a> ›
+                <a href="/index.html#guides">Guides</a> ›
+                <span aria-current="page">Bazaar Guide</span>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <div class="container">
+                <h1>Fire Emblem Shadows Bazaar Guide</h1>
+                <p class="hero-subtitle">Master trading mechanics, currency optimization, and marketplace strategies for maximum value in Fire Emblem Shadows</p>
+                
+                <figure class="figure">
+                    <svg width="350" height="180" viewBox="0 0 350 180" role="img" aria-labelledby="bazaar-title">
+                        <title id="bazaar-title">Bazaar marketplace with coin trading and item exchange</title>
+                        <rect width="350" height="180" fill="rgba(212, 175, 55, 0.1)" rx="12"/>
+                        
+                        <!-- Market stalls -->
+                        <rect x="50" y="60" width="80" height="60" fill="rgba(212, 175, 55, 0.2)" stroke="#D4AF37" stroke-width="2" rx="8"/>
+                        <rect x="220" y="60" width="80" height="60" fill="rgba(37, 99, 235, 0.2)" stroke="#2563EB" stroke-width="2" rx="8"/>
+                        
+                        <!-- Gold coins -->
+                        <circle cx="70" cy="85" r="8" fill="#D4AF37"/>
+                        <circle cx="80" cy="95" r="8" fill="#D4AF37"/>
+                        <circle cx="90" cy="85" r="8" fill="#D4AF37"/>
+                        <circle cx="110" cy="85" r="8" fill="#D4AF37"/>
+                        
+                        <!-- Items -->
+                        <rect x="240" y="75" width="15" height="15" fill="#2563EB" rx="2"/>
+                        <rect x="260" y="75" width="15" height="15" fill="#34A853" rx="2"/>
+                        <rect x="250" y="95" width="15" height="15" fill="#DC2626" rx="2"/>
+                        
+                        <!-- Trading arrow -->
+                        <path d="M130 90 L220 90" stroke="#E5E7EB" stroke-width="3" marker-end="url(#trade-arrow)"/>
+                        <text x="175" y="85" text-anchor="middle" fill="#E5E7EB" font-size="10" font-weight="600">Trade</text>
+                        
+                        <!-- Labels -->
+                        <text x="90" y="140" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="600">Gold</text>
+                        <text x="260" y="140" text-anchor="middle" fill="#2563EB" font-size="12" font-weight="600">Items</text>
+                        <text x="175" y="165" text-anchor="middle" fill="#E5E7EB" font-size="14" font-weight="600">Bazaar Exchange</text>
+                        
+                        <defs>
+                            <marker id="trade-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#E5E7EB"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Fire Emblem Shadows bazaar trading system with gold-to-item exchange mechanics</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section content">
+            <div class="container">
+                <h2>Currencies & Fees</h2>
+                <div class="currency-section">
+                    <p>Fire Emblem Shadows features a multi-currency economy centered around in-game gold as the primary trading medium. Understanding currency mechanics and associated fees helps optimize your bazaar transactions.</p>
+                    
+                    <div class="currency-grid">
+                        <div class="currency-card">
+                            <div class="currency-icon">🪙</div>
+                            <h4>In-Game Gold</h4>
+                            <p><strong>Primary Currency:</strong> Earned through combat victories, daily rewards, and quest completion. Used for most bazaar transactions.</p>
+                            <ul>
+                                <li>No transaction fees for standard trades</li>
+                                <li>Daily earning limits may apply</li>
+                                <li>Transferable between team members</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="currency-card">
+                            <div class="currency-icon">💎</div>
+                            <h4>Premium Crystals</h4>
+                            <p><strong>Premium Currency:</strong> Purchased with real money or earned through special events. Provides access to exclusive items and expedited transactions.</p>
+                            <ul>
+                                <li>No trading fees when using crystals</li>
+                                <li>Access to premium marketplace sections</li>
+                                <li>Cannot be transferred between players</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="currency-card">
+                            <div class="currency-icon">⚔️</div>
+                            <h4>Battle Tokens</h4>
+                            <p><strong>Activity Currency:</strong> Earned through combat performance and social deduction success. Used for specialized gear and upgrades.</p>
+                            <ul>
+                                <li>Weekly earning caps</li>
+                                <li>Higher value for rare item purchases</li>
+                                <li>Bonus tokens for consecutive wins</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="currency-card">
+                            <div class="currency-icon">🏆</div>
+                            <h4>Reputation Points</h4>
+                            <p><strong>Social Currency:</strong> Gained through positive trading interactions and community participation. Unlocks trusted trader benefits.</p>
+                            <ul>
+                                <li>Reduces transaction fees over time</li>
+                                <li>Access to exclusive trading channels</li>
+                                <li>Protection against fraud</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <figure class="figure">
+                        <svg width="320" height="140" viewBox="0 0 320 140" role="img" aria-labelledby="currency-flow-title">
+                            <title id="currency-flow-title">Currency flow showing how different currencies interact in the bazaar system</title>
+                            <rect width="320" height="140" fill="rgba(37, 99, 235, 0.05)" rx="8"/>
+                            
+                            <!-- Currency circles -->
+                            <circle cx="80" cy="40" r="20" fill="rgba(212, 175, 55, 0.3)" stroke="#D4AF37" stroke-width="2"/>
+                            <text x="80" y="46" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="600">Gold</text>
+                            
+                            <circle cx="240" cy="40" r="20" fill="rgba(139, 90, 60, 0.3)" stroke="#8B5A3C" stroke-width="2"/>
+                            <text x="240" y="46" text-anchor="middle" fill="#8B5A3C" font-size="9" font-weight="600">Crystals</text>
+                            
+                            <circle cx="80" cy="100" r="20" fill="rgba(37, 99, 235, 0.3)" stroke="#2563EB" stroke-width="2"/>
+                            <text x="80" y="106" text-anchor="middle" fill="#2563EB" font-size="9" font-weight="600">Tokens</text>
+                            
+                            <circle cx="240" cy="100" r="20" fill="rgba(52, 168, 83, 0.3)" stroke="#34A853" stroke-width="2"/>
+                            <text x="240" y="106" text-anchor="middle" fill="#34A853" font-size="8" font-weight="600">Reputation</text>
+                            
+                            <!-- Center exchange -->
+                            <rect x="140" y="60" width="40" height="20" fill="rgba(212, 175, 55, 0.2)" stroke="#D4AF37" stroke-width="1" rx="4"/>
+                            <text x="160" y="72" text-anchor="middle" fill="#D4AF37" font-size="9" font-weight="600">BAZAAR</text>
+                            
+                            <!-- Flow arrows -->
+                            <path d="M100 45 L140 65 M100 95 L140 75 M180 65 L220 45 M180 75 L220 95" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="2,2"/>
+                            
+                            <text x="160" y="125" text-anchor="middle" fill="#E5E7EB" font-size="11" font-weight="600">Multi-Currency Exchange</text>
+                        </svg>
+                        <figcaption>Currency interaction flow showing how different Fire Emblem Shadows currencies work together in bazaar trading</figcaption>
+                    </figure>
+                    
+                    <h3>Transaction Fees Structure</h3>
+                    <ul>
+                        <li><strong>Standard trades:</strong> 2-5% fee based on item value and your reputation level</li>
+                        <li><strong>Premium transactions:</strong> No fees when using crystals or high reputation status</li>
+                        <li><strong>Cross-currency exchanges:</strong> 10% conversion fee, reduced with reputation bonuses</li>
+                        <li><strong>Rush orders:</strong> Additional 15% fee for immediate transaction processing</li>
+                    </ul>
+                </div>
+
+                <h2>What to Buy/Avoid Early</h2>
+                <div class="value-section">
+                    <p>Early-game Fire Emblem Shadows bazaar decisions significantly impact your progression efficiency. Focus on items that provide immediate functional benefits while avoiding common value traps.</p>
+                    
+                    <div class="value-grid">
+                        <div class="value-card">
+                            <h4>Essential Early Purchases</h4>
+                            <ul>
+                                <li><strong>Basic Gear Sets:</strong> Complete role-appropriate equipment packages offer better value than individual pieces</li>
+                                <li><strong>Ability Upgrade Materials:</strong> Items that enhance your character's core abilities provide immediate combat benefits</li>
+                                <li><strong>Storage Expansions:</strong> Additional inventory space prevents costly item management later</li>
+                                <li><strong>Reputation Boosters:</strong> Items that increase reputation gain accelerate access to better trading terms</li>
+                                <li><strong>Team Coordination Tools:</strong> Communication and tactical items improve social deduction success</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="value-card avoid">
+                            <h4>Common Value Traps</h4>
+                            <ul>
+                                <li><strong>Cosmetic Items:</strong> Appearance-only purchases provide no gameplay advantage and drain resources</li>
+                                <li><strong>Single-Use Consumables:</strong> Expensive temporary buffs rarely justify their cost for new players</li>
+                                <li><strong>High-End Gear Too Early:</strong> Advanced equipment you can't effectively use yet due to level requirements</li>
+                                <li><strong>Speculative Investments:</strong> Buying items hoping for future price increases is risky for beginners</li>
+                                <li><strong>Duplicated Functionality:</strong> Items that overlap with abilities you already have access to</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Budget Allocation Strategy</h3>
+                    <p><strong>Recommended early-game spending breakdown:</strong></p>
+                    <ul>
+                        <li><strong>40% Core Equipment:</strong> Essential gear for your primary role</li>
+                        <li><strong>25% Progression Items:</strong> Materials and upgrades for character development</li>
+                        <li><strong>20% Utility/QoL:</strong> Storage, convenience, and coordination tools</li>
+                        <li><strong>10% Emergency Fund:</strong> Reserved for unexpected opportunities or needs</li>
+                        <li><strong>5% Experimentation:</strong> Testing new items or strategies</li>
+                    </ul>
+                    
+                    <figure class="figure">
+                        <svg width="300" height="160" viewBox="0 0 300 160" role="img" aria-labelledby="value-comparison-title">
+                            <title id="value-comparison-title">Value comparison showing good investments versus value traps</title>
+                            <rect width="300" height="160" fill="rgba(52, 168, 83, 0.05)" rx="8"/>
+                            
+                            <!-- Good investment side -->
+                            <rect x="20" y="30" width="120" height="100" fill="rgba(52, 168, 83, 0.1)" stroke="#34A853" stroke-width="2" rx="8"/>
+                            <text x="80" y="50" text-anchor="middle" fill="#34A853" font-size="12" font-weight="600">Good Investments</text>
+                            
+                            <circle cx="50" cy="70" r="8" fill="#34A853"/>
+                            <text x="65" y="75" fill="#34A853" font-size="9">Core Gear</text>
+                            
+                            <circle cx="50" cy="90" r="8" fill="#34A853"/>
+                            <text x="65" y="95" fill="#34A853" font-size="9">Upgrades</text>
+                            
+                            <circle cx="50" cy="110" r="8" fill="#34A853"/>
+                            <text x="65" y="115" fill="#34A853" font-size="9">Utilities</text>
+                            
+                            <!-- Value trap side -->
+                            <rect x="160" y="30" width="120" height="100" fill="rgba(220, 38, 38, 0.1)" stroke="#DC2626" stroke-width="2" rx="8"/>
+                            <text x="220" y="50" text-anchor="middle" fill="#DC2626" font-size="12" font-weight="600">Value Traps</text>
+                            
+                            <path d="M185 70 L195 80 M195 70 L185 80" stroke="#DC2626" stroke-width="2"/>
+                            <text x="205" y="75" fill="#DC2626" font-size="9">Cosmetics</text>
+                            
+                            <path d="M185 90 L195 100 M195 90 L185 100" stroke="#DC2626" stroke-width="2"/>
+                            <text x="205" y="95" fill="#DC2626" font-size="9">Consumables</text>
+                            
+                            <path d="M185 110 L195 120 M195 110 L185 120" stroke="#DC2626" stroke-width="2"/>
+                            <text x="205" y="115" fill="#DC2626" font-size="9">Speculation</text>
+                            
+                            <text x="150" y="150" text-anchor="middle" fill="#E5E7EB" font-size="12" font-weight="600">Early Game Priorities</text>
+                        </svg>
+                        <figcaption>Comparison of valuable early investments versus common spending traps in Fire Emblem Shadows bazaar</figcaption>
+                    </figure>
+                </div>
+
+                <h2>Safety & Etiquette</h2>
+                <div class="safety-section">
+                    <p>Safe and fair trading practices protect your Fire Emblem Shadows progress while building positive community relationships. Follow established etiquette to maintain good reputation and avoid common scams.</p>
+                    
+                    <div class="safety-grid">
+                        <div class="safety-card">
+                            <h4>Scam Prevention</h4>
+                            <ul>
+                                <li>Always verify item authenticity before confirming trades</li>
+                                <li>Use official bazaar systems rather than external trading platforms</li>
+                                <li>Be suspicious of deals that seem too good to be true</li>
+                                <li>Never share account information or passwords</li>
+                                <li>Report suspicious trading activity to community moderators</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="safety-card">
+                            <h4>Fair Trading Practices</h4>
+                            <ul>
+                                <li>Honor agreed-upon prices and don't change terms last minute</li>
+                                <li>Provide accurate item descriptions and condition assessments</li>
+                                <li>Respond promptly to trade communications</li>
+                                <li>Be patient with new traders learning the system</li>
+                                <li>Leave honest feedback after completed transactions</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="safety-card">
+                            <h4>Reputation Building</h4>
+                            <ul>
+                                <li>Start with smaller trades to establish trustworthiness</li>
+                                <li>Maintain consistent trading behavior and communication style</li>
+                                <li>Help other players understand bazaar mechanics</li>
+                                <li>Participate positively in trading community discussions</li>
+                                <li>Document successful trades for reference</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="safety-card">
+                            <h4>Dispute Resolution</h4>
+                            <ul>
+                                <li>Address concerns directly with trading partners first</li>
+                                <li>Keep records of all trade communications</li>
+                                <li>Use official mediation services for unresolved disputes</li>
+                                <li>Remain calm and professional during disagreements</li>
+                                <li>Learn from negative experiences to avoid future issues</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <h3>Red Flags to Watch For</h3>
+                    <ul>
+                        <li><strong>Pressure tactics:</strong> Traders who rush you into immediate decisions</li>
+                        <li><strong>External communication requests:</strong> Asking to move discussions off official platforms</li>
+                        <li><strong>Unusual payment methods:</strong> Requesting currencies or items not standard for the trade</li>
+                        <li><strong>Poor communication:</strong> Vague responses or reluctance to provide trade details</li>
+                        <li><strong>Negative reputation patterns:</strong> Multiple complaints or disputed transactions in their history</li>
+                    </ul>
+                </div>
+
+                <h2>Weekly Price Watch</h2>
+                <p>Market prices in Fire Emblem Shadows fluctuate based on supply, demand, and game events. Monitor these key items for optimal buying and selling opportunities.</p>
+                
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Item Category</th>
+                            <th>Current Low</th>
+                            <th>Current High</th>
+                            <th>Market Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Basic Gear Sets</strong></td>
+                            <td class="price-low">150-200g</td>
+                            <td class="price-high">300-400g</td>
+                            <td>Stable demand, prices rise during new player influxes</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Upgrade Materials</strong></td>
+                            <td class="price-low">50-75g</td>
+                            <td class="price-high">150-200g</td>
+                            <td>Weekly event rewards affect supply significantly</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Rare Abilities</strong></td>
+                            <td class="price-low">500-800g</td>
+                            <td class="price-high">1200-1500g</td>
+                            <td>Highly volatile, dependent on meta shifts</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Storage Expansions</strong></td>
+                            <td class="price-stable">100-120g</td>
+                            <td class="price-stable">130-150g</td>
+                            <td>Consistent pricing, minimal fluctuation</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Cosmetic Items</strong></td>
+                            <td class="price-low">25-50g</td>
+                            <td class="price-high">200-500g</td>
+                            <td>Fashion trends drive significant price swings</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Premium Consumables</strong></td>
+                            <td class="price-low">75-100g</td>
+                            <td class="price-high">200-250g</td>
+                            <td>Spike during competitive seasons</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Team Coordination Tools</strong></td>
+                            <td class="price-low">200-300g</td>
+                            <td class="price-high">400-500g</td>
+                            <td>Steady growth as social features gain popularity</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Legacy Equipment</strong></td>
+                            <td class="price-stable">Variable</td>
+                            <td class="price-stable">Variable</td>
+                            <td>Collector items, prices based on rarity and nostalgia</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Market Timing Tips</h3>
+                <ul>
+                    <li><strong>Buy during events:</strong> Special events often flood the market with certain items, lowering prices</li>
+                    <li><strong>Sell before updates:</strong> Game updates can change item effectiveness, affecting values</li>
+                    <li><strong>Monitor weekend patterns:</strong> Player activity spikes often create predictable price movements</li>
+                    <li><strong>Track seasonal trends:</strong> Some items see cyclical demand based on game seasons or events</li>
+                </ul>
+            </div>
+        </section>
+
+        <section aria-labelledby="next-steps" class="section next-steps">
+            <div class="container">
+                <h2 id="next-steps">Next steps</h2>
+                <div class="grid-auto">
+                    <a class="card" href="/download.html">
+                        <h3>Download &amp; install</h3>
+                        <p>Get started with Fire Emblem Shadows on your device.</p>
+                    </a>
+                    <a class="card" href="/teams-gear.html">
+                        <h3>Teams &amp; Gear (value builds)</h3>
+                        <p>Learn which team compositions give the best return on investment.</p>
+                    </a>
+                    <a class="card" href="/updates.html">
+                        <h3>Updates (balancing &amp; events)</h3>
+                        <p>Stay current with economy changes and limited-time events.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "Article",
+                "headline": "Fire Emblem Shadows Bazaar — Trading, Currencies & Best-Value Tips",
+                "description": "Master Fire Emblem Shadows bazaar trading with currency guides, value optimization tips, safety practices, and weekly price tracking",
+                "author": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "datePublished": "2025-09-25",
+                "dateModified": "2025-09-25",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "/bazaar.html"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "/bazaar-hero.svg",
+                    "width": 350,
+                    "height": 180,
+                    "description": "Bazaar marketplace with coin trading and item exchange"
+                },
+                "articleSection": "Gaming Economy",
+                "keywords": ["Fire Emblem Shadows", "bazaar trading", "currency guide", "marketplace strategies", "value optimization"]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Bazaar Guide",
+                        "item": "/bazaar.html"
+                    }
+                ]
+            },
+            {
+                "@type": "ImageObject",
+                "url": "/bazaar-exchange.svg",
+                "width": 350,
+                "height": 180,
+                "description": "Fire Emblem Shadows bazaar trading system with gold-to-item exchange mechanics"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // Price table interactivity
+        function initPriceTable() {
+            const priceTable = document.querySelector('.price-table');
+            if (!priceTable) return;
+            
+            const rows = priceTable.querySelectorAll('tbody tr');
+            rows.forEach(row => {
+                row.addEventListener('click', function() {
+                    const itemCategory = this.querySelector('td').textContent;
+                    trackEvent('Bazaar', 'Price Check', itemCategory);
+                });
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initPriceTable();
+        });
+
+        // Analytics placeholder
+        function trackEvent(category, action, label) {
+            console.log('Event:', category, action, label);
+        }
+
+        // Track currency card interactions
+        document.querySelectorAll('.currency-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const currencyName = this.querySelector('h4').textContent;
+                trackEvent('Currency', 'View Details', currencyName);
+            });
+        });
+
+        // Track safety tip engagement
+        document.querySelectorAll('.safety-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const tipCategory = this.querySelector('h4').textContent;
+                trackEvent('Safety', 'View Tips', tipCategory);
+            });
+        });
+    </script>
+</body>
+</html>

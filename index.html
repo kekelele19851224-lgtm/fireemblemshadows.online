@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Shadows — Guide, Download, Features & FAQ (Unofficial Fan Hub)</title>
+    <meta name="description" content="Complete Fire Emblem Shadows guide with download links, voting strategies, team comps, and trading tips for the mobile social deduction RPG.">
+    <link rel="canonical" href="/index.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .hero {
+            padding: 4rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .hero h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-cta {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            min-width: 44px;
+            min-height: 44px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background: #C4A532;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-2);
+            border: 2px solid var(--accent-2);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: var(--accent-2);
+            color: white;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .hero-figure {
+            margin: 2rem 0;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .disclaimer {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 2rem 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .intent-router {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .intent-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-decoration: none;
+            color: var(--text);
+            transition: all 0.2s ease;
+            display: block;
+        }
+
+        .intent-card:hover, .intent-card:focus {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .intent-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .download-card {
+            background: linear-gradient(135deg, var(--accent), #C4A532);
+            color: #000;
+            border: none;
+            margin: 2rem 0;
+        }
+
+        .download-card:hover, .download-card:focus {
+            background: linear-gradient(135deg, #C4A532, var(--accent));
+        }
+
+        .article-outline {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+        }
+
+        .outline-item {
+            margin: 1rem 0;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .outline-item:last-child {
+            border-bottom: none;
+        }
+
+        .outline-item h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .outline-link {
+            color: var(--accent-2);
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .outline-link:hover, .outline-link:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .content {
+            margin: 3rem 0;
+        }
+
+        .content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .content p {
+            margin: 1rem 0;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content li {
+            margin: 0.5rem 0;
+        }
+
+        .figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .next-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .intent-router {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link" aria-current="page">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <section class="hero">
+            <div class="container">
+                <h1>Fire Emblem Shadows Guide & Download Hub</h1>
+                <p class="hero-subtitle">Master social deduction tactics, build winning teams, and navigate the bazaar in this mobile strategy RPG</p>
+                <div class="hero-cta">
+                    <a href="#how-to-play" class="btn btn-primary">Quick Start</a>
+                    <a href="/download.html" class="btn btn-secondary">Download</a>
+                </div>
+                
+                <figure class="hero-figure">
+                    <svg width="400" height="200" viewBox="0 0 400 200" role="img" aria-labelledby="hero-title">
+                        <title id="hero-title">Fire Emblem Shadows strategic gameplay overview</title>
+                        <defs>
+                            <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" style="stop-color:#D4AF37;stop-opacity:0.3" />
+                                <stop offset="100%" style="stop-color:#2563EB;stop-opacity:0.3" />
+                            </linearGradient>
+                        </defs>
+                        <rect width="400" height="200" fill="url(#heroGrad)" rx="12"/>
+                        <circle cx="100" cy="100" r="30" fill="#D4AF37" opacity="0.8"/>
+                        <circle cx="200" cy="80" r="25" fill="#2563EB" opacity="0.8"/>
+                        <circle cx="300" cy="120" r="28" fill="#D4AF37" opacity="0.8"/>
+                        <path d="M100 100 L200 80 L300 120 Z" stroke="#E5E7EB" stroke-width="2" fill="none" opacity="0.6"/>
+                        <text x="200" y="170" text-anchor="middle" fill="#E5E7EB" font-size="14" font-weight="600">Strategic Team Formation</text>
+                    </svg>
+                    <figcaption>Three-ally squad formation and tactical coordination</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="disclaimer">
+                    <strong>Disambiguation:</strong> Fire Emblem Shadows is a mobile social deduction RPG, distinct from Fire Emblem Echoes: Shadows of Valentia (2017, 3DS) and Fire Emblem: Shadow Dragon (DS). This fan-made hub covers the mobile game.
+                </div>
+
+                <div class="intent-router">
+                    <a href="/download.html" class="intent-card download-card" id="download-route">
+                        <h3>Download</h3>
+                        <p>Get Fire Emblem Shadows on iOS & Android with install guides and troubleshooting</p>
+                    </a>
+                    <a href="/what-is.html" class="intent-card">
+                        <h3>What is Fire Emblem Shadows</h3>
+                        <p>Game overview, trailer highlights, and core mechanics explained</p>
+                    </a>
+                    <a href="/deduction-guide.html" class="intent-card">
+                        <h3>Voting Guide</h3>
+                        <p>Master the Disciple of Shadow mechanic and social deduction strategies</p>
+                    </a>
+                    <a href="/teams-gear.html" class="intent-card">
+                        <h3>Teams & Gear</h3>
+                        <p>Character roles, team compositions, and real-time combat tactics</p>
+                    </a>
+                    <a href="/bazaar.html" class="intent-card">
+                        <h3>Bazaar Trading</h3>
+                        <p>Currency guide, trading tips, and best-value item priorities</p>
+                    </a>
+                    <a href="/faq.html" class="intent-card">
+                        <h3>FAQ</h3>
+                        <p>Common questions about gameplay, accounts, and troubleshooting</p>
+                    </a>
+                </div>
+
+                <div class="article-outline">
+                    <h2>Complete Fire Emblem Shadows Guide</h2>
+                    <div class="outline-item">
+                        <h3>What is Fire Emblem Shadows?</h3>
+                        <p>Mobile strategy RPG combining tactical combat with social deduction</p>
+                        <a href="/what-is.html" class="outline-link">View full guide →</a>
+                    </div>
+                    <div class="outline-item">
+                        <h3>Download & Install</h3>
+                        <p>Official links, system requirements, and troubleshooting</p>
+                        <a href="/download.html" class="outline-link">View full guide →</a>
+                    </div>
+                    <div class="outline-item">
+                        <h3>Social Deduction Strategies</h3>
+                        <p>Master voting mechanics and the Disciple of Shadow system</p>
+                        <a href="/deduction-guide.html" class="outline-link">View full guide →</a>
+                    </div>
+                    <div class="outline-item">
+                        <h3>Team Building & Combat</h3>
+                        <p>Character roles, squad synergy, and real-time tactics</p>
+                        <a href="/teams-gear.html" class="outline-link">View full guide →</a>
+                    </div>
+                    <div class="outline-item">
+                        <h3>Bazaar & Trading</h3>
+                        <p>Currency management and marketplace strategies</p>
+                        <a href="/bazaar.html" class="outline-link">View full guide →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section content" id="overview">
+            <div class="container">
+                <h2>What is Fire Emblem Shadows?</h2>
+                <p>Fire Emblem Shadows is a mobile strategy RPG that uniquely combines tactical combat with social deduction elements. Players form three-ally squads to engage in real-time battles while navigating trust dynamics through the innovative Disciple of Shadow mechanic.</p>
+
+                <figure class="figure">
+                    <svg width="300" height="150" viewBox="0 0 300 150" role="img" aria-labelledby="deduction-title">
+                        <title id="deduction-title">Social deduction voting process</title>
+                        <rect width="300" height="150" fill="rgba(37, 99, 235, 0.1)" rx="8"/>
+                        <circle cx="75" cy="75" r="20" fill="#D4AF37"/>
+                        <circle cx="150" cy="75" r="20" fill="#2563EB"/>
+                        <circle cx="225" cy="75" r="20" fill="#D4AF37"/>
+                        <path d="M95 75 L130 75 M170 75 L205 75" stroke="#E5E7EB" stroke-width="3" marker-end="url(#arrowhead)"/>
+                        <text x="150" y="125" text-anchor="middle" fill="#E5E7EB" font-size="12">Discuss → Vote → Next Round</text>
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+                                <polygon points="0 0, 10 3.5, 0 7" fill="#E5E7EB"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Voting flow: discuss suspicions, vote, and progress to next difficulty</figcaption>
+                </figure>
+
+                <h2>Fire Emblem Shadows Game Features</h2>
+                
+                <h3>Social Deduction: The Disciple of Shadow Mechanic</h3>
+                <p>The core social element revolves around identifying hidden "Disciples of Shadow" within your team. After battles, players engage in discussion phases where they must analyze behavior patterns and vote on suspected infiltrators. These votes directly influence the difficulty and rewards of subsequent encounters.</p>
+
+                <h3>Three-Ally Squads and Real-Time Battles</h3>
+                <p>Combat takes place with carefully constructed three-person teams, each filling specific roles like frontliner, support, or burst damage. Real-time battles require quick decision-making and coordinated ability timing to overcome increasingly challenging encounters.</p>
+
+                <figure class="figure">
+                    <svg width="250" height="200" viewBox="0 0 250 200" role="img" aria-labelledby="squad-title">
+                        <title id="squad-title">Three-ally squad formation triangle</title>
+                        <polygon points="125,30 60,150 190,150" stroke="#D4AF37" stroke-width="3" fill="rgba(212, 175, 55, 0.1)"/>
+                        <circle cx="125" cy="50" r="15" fill="#2563EB"/>
+                        <circle cx="80" cy="130" r="15" fill="#D4AF37"/>
+                        <circle cx="170" cy="130" r="15" fill="#2563EB"/>
+                        <text x="125" y="25" text-anchor="middle" fill="#E5E7EB" font-size="10">Control</text>
+                        <text x="60" y="175" text-anchor="middle" fill="#E5E7EB" font-size="10">Tank</text>
+                        <text x="190" y="175" text-anchor="middle" fill="#E5E7EB" font-size="10">DPS</text>
+                    </svg>
+                    <figcaption>Strategic positioning and role synergy in squad formation</figcaption>
+                </figure>
+
+                <h3>Bazaar Trading, Gear, and Progression</h3>
+                <p>The in-game bazaar serves as a central hub for equipment trading using earned gold. Players can acquire gear upgrades, trade valuable items with other players, and optimize their character builds. Understanding market dynamics and item values becomes crucial for efficient progression.</p>
+
+                <h2 id="how-to-play">How to Play Fire Emblem Shadows (Quick Start)</h2>
+                
+                <h3>Download & Install Steps</h3>
+                <p>Fire Emblem Shadows is available on both iOS and Android platforms. The installation process typically involves downloading from official app stores, though regional availability may vary. For detailed installation guides and troubleshooting, visit our <a href="/download.html" class="outline-link">complete download guide</a>.</p>
+
+                <h3>First-Hour Setup and Combat Basics</h3>
+                <p>New players begin with tutorial battles that introduce the three-ally system and basic combat mechanics. Focus on understanding each character's role within your squad and practice coordinating ability timing. The initial gameplay emphasizes learning fundamental tactics before introducing social deduction elements.</p>
+
+                <h3>Voting Tips, Trust, and Team Synergy</h3>
+                <p>Success in Fire Emblem Shadows requires balancing combat performance with social awareness. Pay attention to teammates' decision patterns during battles, as these may reveal allegiances. Vote carefully during discussion phases, as incorrect accusations can impact team morale and future encounter difficulty.</p>
+
+                <figure class="figure">
+                    <svg width="280" height="120" viewBox="0 0 280 120" role="img" aria-labelledby="bazaar-title">
+                        <title id="bazaar-title">Bazaar trading interface concept</title>
+                        <rect width="280" height="120" fill="rgba(212, 175, 55, 0.1)" rx="8"/>
+                        <circle cx="70" cy="60" r="25" fill="#D4AF37"/>
+                        <path d="M95 60 L185 60" stroke="#E5E7EB" stroke-width="2" marker-end="url(#coin-arrow)"/>
+                        <rect x="200" y="40" width="60" height="40" fill="#2563EB" rx="4"/>
+                        <text x="140" y="40" text-anchor="middle" fill="#E5E7EB" font-size="10">Gold Trade</text>
+                        <text x="140" y="95" text-anchor="middle" fill="#E5E7EB" font-size="12">Bazaar Exchange</text>
+                        <defs>
+                            <marker id="coin-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#E5E7EB"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Trading gold for equipment and items in the bazaar marketplace</figcaption>
+                </figure>
+
+                <h2>Why Players are Searching for Fire Emblem Shadows</h2>
+                
+                <h3>Who Will Love Fire Emblem Shadows</h3>
+                <p>This game appeals to strategy RPG veterans seeking fresh mechanics and newcomers attracted to social deduction gameplay. Players who enjoy games requiring both tactical thinking and psychological insight will find Fire Emblem Shadows particularly engaging. The mobile format makes it accessible for gaming sessions of varying lengths.</p>
+
+                <h2>Fire Emblem Shadows FAQ (Quick Answers)</h2>
+                <p><strong>Is Fire Emblem Shadows free-to-start?</strong> The game follows a free-to-start model with optional in-app purchases for progression acceleration and cosmetic items.</p>
+                <p><strong>Which platforms support Fire Emblem Shadows?</strong> Available on iOS and Android via official App Store and Google Play Store releases.</p>
+                <p><strong>How does the social deduction work?</strong> Players analyze teammate behavior during battles and vote on suspected Disciples of Shadow in discussion phases between encounters.</p>
+                <p>For comprehensive answers to common questions, visit our <a href="/faq.html" class="outline-link">complete FAQ section</a>.</p>
+            </div>
+        </section>
+
+        <section aria-labelledby="next-steps" class="section next-steps">
+            <div class="container">
+                <h2 id="next-steps">Next steps</h2>
+                <div class="grid-auto">
+                    <a class="card" href="/download.html">
+                        <h3>Download</h3>
+                        <p>Get Fire Emblem Shadows on iOS & Android with install guides.</p>
+                    </a>
+                    <a class="card" href="/deduction-guide.html">
+                        <h3>Voting guide</h3>
+                        <p>Master social deduction and Disciple of Shadow mechanics.</p>
+                    </a>
+                    <a class="card" href="/teams-gear.html">
+                        <h3>Teams & Gear</h3>
+                        <p>Build winning squads with optimal role synergy and tactics.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "WebSite",
+                "@id": "/#website",
+                "url": "/",
+                "name": "Fire Emblem Shadows Guide Hub",
+                "description": "Complete Fire Emblem Shadows guide with download links, voting strategies, team comps, and trading tips",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            },
+            {
+                "@type": "Article",
+                "@id": "/#article",
+                "headline": "Fire Emblem Shadows — Complete Guide & Download Hub",
+                "description": "Master social deduction tactics, build winning teams, and navigate the bazaar in this mobile strategy RPG",
+                "author": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "FE Shadows Fan Hub"
+                },
+                "datePublished": "2025-09-25",
+                "dateModified": "2025-09-25",
+                "mainEntityOfPage": {
+                    "@type": "WebPage",
+                    "@id": "/"
+                },
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "/hero-image.svg",
+                    "width": 400,
+                    "height": 200
+                }
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is Fire Emblem Shadows free-to-start?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The game follows a free-to-start model with optional in-app purchases for progression acceleration and cosmetic items."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which platforms support Fire Emblem Shadows?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Currently available information suggests iOS and Android compatibility, though regional availability may vary."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <script id="link-map" type="application/json">
+    {
+      "home": "/index.html",
+      "download": "/download.html",
+      "whatis": "/what-is.html",
+      "voting": "/deduction-guide.html",
+      "teams": "/teams-gear.html",
+      "bazaar": "/bazaar.html",
+      "updates": "/updates.html",
+      "faq": "/faq.html"
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // OS-based download routing
+        function setupDownloadRouting() {
+            const downloadCard = document.getElementById('download-route');
+            const userAgent = navigator.userAgent.toLowerCase();
+            
+            if (userAgent.includes('iphone') || userAgent.includes('ipad')) {
+                downloadCard.href = '/download.html#ios';
+            } else if (userAgent.includes('android')) {
+                downloadCard.href = '/download.html#android';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            setupDownloadRouting();
+        });
+
+        // Analytics placeholder
+        function trackEvent(category, action, label) {
+            // Analytics implementation would go here
+            console.log('Event:', category, action, label);
+        }
+
+        // Add click tracking to main CTAs
+        document.querySelectorAll('.btn, .intent-card').forEach(element => {
+            element.addEventListener('click', function() {
+                trackEvent('Navigation', 'Click', this.href || this.textContent);
+            });
+        });
+
+        // Auto-generate H2/H3 anchors + self-links
+        (function(){
+            const slug = s => s.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');
+            document.querySelectorAll('h2,h3').forEach(h => {
+                if(!h.id) h.id = slug(h.textContent);
+                if(!h.querySelector('.h-anchor')){
+                    const a = document.createElement('a');
+                    a.href = `#${h.id}`;
+                    a.className = 'h-anchor';
+                    a.setAttribute('aria-label','Link to this section');
+                    a.textContent = '¶';
+                    h.appendChild(a);
+                }
+            });
+        })();
+
+        // Internal link click tracking
+        document.addEventListener('click', e => {
+            const a = e.target.closest('a[href]');
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(url.origin === location.origin){ // internal
+                console.log('internal_link_click', {href:url.pathname + url.hash, text:a.textContent.trim()});
+            }
+        });
+    </script>
+
+    <style>
+        .h-anchor{margin-left:.5rem;font-weight:600;opacity:.6}
+        .h-anchor:focus,.h-anchor:hover{opacity:1;outline:2px solid currentColor;outline-offset:2px}
+        .grid-auto{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+        .card{display:block;padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:var(--card-bg, rgba(255,255,255,.04));text-decoration:none;color:inherit;transition:all 0.2s ease}
+        .card:hover,.card:focus{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212, 175, 55, 0.1);border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
+        .card h3{margin:0 0 4px;color:var(--accent)}
+        .card p{margin:0;opacity:.9}
+    </style>
+
+    <script>
+      // Simple sanity check: should log true, "function"
+      console.log('GA4 installed:', !!window.dataLayer, typeof window.gtag);
+    </script>
+</body>
+</html>

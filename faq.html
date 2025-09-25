@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Shadows FAQ — Download, Gameplay, Accounts & Troubleshooting</title>
+    <meta name="description" content="Get answers to common Fire Emblem Shadows questions about download, gameplay mechanics, account issues, and technical troubleshooting.">
+    <link rel="canonical" href="/faq.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        .content a:hover, .content a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            min-width: 44px;
+            min-height: 44px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background: #C4A532;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .faq-search {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .search-input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg);
+            color: var(--text);
+            transition: border-color 0.2s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .search-input::placeholder {
+            color: var(--text);
+            opacity: 0.6;
+        }
+
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .category-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            cursor: pointer;
+        }
+
+        .category-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(212, 175, 55, 0.1);
+        }
+
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 1rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .category-card h3 {
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .faq-section {
+            margin: 3rem 0;
+        }
+
+        .faq-item {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 1rem 0;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 44px;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-question:hover, .faq-question:focus {
+            background: rgba(212, 175, 55, 0.05);
+            outline: 2px solid var(--accent);
+            outline-offset: -2px;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        .faq-answer p {
+            margin: 1rem 0;
+        }
+
+        .faq-answer ul {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .faq-answer li {
+            margin: 0.5rem 0;
+        }
+
+        .faq-icon {
+            transition: transform 0.2s ease;
+            font-size: 1.2rem;
+            color: var(--accent);
+        }
+
+        .faq-question[aria-expanded="true"] .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .related-links {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .next-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams & Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <section class="hero">
+            <div class="container">
+                <h1>Fire Emblem Shadows FAQ</h1>
+                <p class="hero-subtitle">Find answers to common questions about Fire Emblem Shadows gameplay, downloads, accounts, and troubleshooting</p>
+            </div>
+        </section>
+
+        <section class="section content">
+            <div class="container">
+                <div class="faq-search">
+                    <h2>Search FAQ</h2>
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Search for answers..."
+                        id="faq-search-input"
+                        aria-label="Search FAQ questions"
+                        onkeyup="searchFAQ()"
+                    >
+                </div>
+
+                <div class="faq-categories">
+                    <div class="category-card" onclick="scrollToSection('general')">
+                        <div class="category-icon">🎮</div>
+                        <h3>General Gameplay</h3>
+                        <p>Basic mechanics, social deduction, and team coordination</p>
+                    </div>
+                    <div class="category-card" onclick="scrollToSection('download')">
+                        <div class="category-icon">📱</div>
+                        <h3>Download & Install</h3>
+                        <p>Platform support, requirements, and installation issues</p>
+                    </div>
+                    <div class="category-card" onclick="scrollToSection('account')">
+                        <div class="category-icon">👤</div>
+                        <h3>Account & Progress</h3>
+                        <p>Save data, cross-platform sync, and account management</p>
+                    </div>
+                    <div class="category-card" onclick="scrollToSection('technical')">
+                        <div class="category-icon">🔧</div>
+                        <h3>Technical Issues</h3>
+                        <p>Performance problems, crashes, and connectivity</p>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="general">
+                    <h2>General Gameplay</h2>
+                    
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Is Fire Emblem Shadows free-to-start?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, Fire Emblem Shadows follows a free-to-start model. You can download and begin playing without any upfront costs. The game includes optional in-app purchases for cosmetic items, progression acceleration, and premium currency, but core gameplay features remain accessible to all players.</p>
+                            <p>The monetization system is designed to be fair, with no pay-to-win mechanics affecting social deduction or combat balance.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Which platforms and regions support Fire Emblem Shadows?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Fire Emblem Shadows is available on iOS and Android devices through official App Store and Google Play Store releases. Regional availability may vary depending on your location.</p>
+                            <p>Visit the <a href="/download.html">download page</a> for direct links to the official website, App Store, and Google Play Store.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Is this the same as Fire Emblem Echoes: Shadows of Valentia from 2017?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No, Fire Emblem Shadows is a completely different game from Fire Emblem Echoes: Shadows of Valentia (2017, 3DS). Despite similar names, they are separate titles with different gameplay mechanics, platforms, and development teams.</p>
+                            <p>Fire Emblem Shadows is a mobile social deduction RPG, while Echoes: Shadows of Valentia is a traditional turn-based strategy game. They are not related beyond being part of the broader Fire Emblem franchise.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>How does the social deduction mechanic work?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>The Disciple of Shadow system assigns hidden roles to players each match. Some players are designated as "Light" faction members, while others secretly play as "Disciples of Shadow." During combat phases, all players work together regardless of faction.</p>
+                            <p>Between battles, teams enter discussion phases where they analyze each other's behavior and vote on suspected Disciples. Successful identification affects the difficulty and rewards of subsequent encounters. Learn more in our <a href="/deduction-guide.html">complete voting guide</a>.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>What are the basic team composition requirements?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Fire Emblem Shadows uses three-ally squads with flexible role assignments. While there are no strict requirements, successful teams typically include a mix of frontliners (tanks), damage dealers, support characters, and control specialists.</p>
+                            <p>The key is role synergy rather than specific character combinations. Our <a href="/teams-gear.html">team building guide</a> covers optimal compositions and tactical coordination strategies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="download">
+                    <h2>Download & Installation</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>App Store or Google Play not available in my region — what can I do?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Regional availability varies for Fire Emblem Shadows releases. If the game isn't available in your area, check back periodically as launches often occur in waves across different markets.</p>
+                            <p>For security reasons, avoid unofficial sources, modified APK files, or third-party app stores. These can compromise your device security and account safety. Official releases ensure proper support and update compatibility.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>My device meets requirements but the app won't install. Why?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Several factors can prevent installation even on compatible devices:</p>
+                            <ul>
+                                <li>Insufficient storage space (Fire Emblem Shadows requires additional space beyond the initial download)</li>
+                                <li>Parental controls or device restrictions blocking game downloads</li>
+                                <li>Outdated operating system version despite meeting minimum requirements</li>
+                                <li>Regional restrictions or account settings preventing access</li>
+                            </ul>
+                            <p>Try clearing storage space, updating your OS, and checking account/parental control settings. Visit our <a href="/download.html">download troubleshooting guide</a> for detailed solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>The game downloads but won't launch or keeps crashing. How do I fix this?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Launch issues are often related to device compatibility or resource conflicts:</p>
+                            <ul>
+                                <li>Restart your device and close other apps to free up RAM</li>
+                                <li>Ensure you have stable internet connection for initial asset downloads</li>
+                                <li>Check that your device meets all system requirements, not just minimum specs</li>
+                                <li>Clear the app cache (Android) or reinstall the app (iOS)</li>
+                                <li>Disable VPN or proxy connections that might interfere with game servers</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>How much storage space does Fire Emblem Shadows require?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Fire Emblem Shadows requires approximately 3GB of free storage space for the complete installation, including initial download and additional game assets. The initial app download is smaller, but the game downloads additional content during first launch.</p>
+                            <p>We recommend having at least 4GB of free space to account for future updates and temporary files. Regular updates may require additional storage, so maintain some buffer space for optimal performance.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="account">
+                    <h2>Account & Progress</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Does my progress sync across different devices?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Fire Emblem Shadows supports cross-device progress synchronization through cloud save functionality. You'll need to create and link a game account during initial setup to enable this feature.</p>
+                            <p>Progress sync includes character progression, item inventory, bazaar transactions, and game settings. Some temporary data like current match state may not sync immediately but will update after completing ongoing activities.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>I lost my account data. Can it be recovered?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Account recovery depends on whether you linked your progress to a game account before losing access. If you created an account with email verification or social media linking, contact customer support with your account details.</p>
+                            <p>Recovery information needed typically includes:</p>
+                            <ul>
+                                <li>Account email or username</li>
+                                <li>Player ID (if available)</li>
+                                <li>Approximate account creation date</li>
+                                <li>Recent purchase receipts (if applicable)</li>
+                                <li>Device information where the account was last accessed</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Can I change my username or player ID?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Username changes are typically possible through the account settings menu, though there may be limitations on frequency or cost. Some games provide free username changes initially, with premium currency costs for subsequent changes.</p>
+                            <p>Player IDs are usually permanent identifiers that cannot be changed, as they're used for friend systems, bazaar transactions, and match history tracking. Check the in-game account settings for your specific options.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>How do I link my account to social media or email?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Account linking is usually available through the settings menu under "Account" or "Profile" sections. Linking your account provides:</p>
+                            <ul>
+                                <li>Cross-device progress synchronization</li>
+                                <li>Account recovery options if you lose device access</li>
+                                <li>Enhanced security for your game progress</li>
+                                <li>Easier friend finding through social connections</li>
+                            </ul>
+                            <p>We strongly recommend linking your account as soon as possible to protect your progress and investment in the game.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-section" id="technical">
+                    <h2>Technical Issues</h2>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>I'm experiencing lag or poor performance during battles. How can I improve this?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Performance issues during real-time combat can significantly impact gameplay. Try these optimization steps:</p>
+                            <ul>
+                                <li>Close background apps to free up device memory</li>
+                                <li>Lower graphics settings in the game options menu</li>
+                                <li>Ensure stable WiFi connection (cellular data may cause lag)</li>
+                                <li>Restart the app and your device periodically</li>
+                                <li>Check for app updates that may include performance improvements</li>
+                                <li>Avoid playing while device is charging or overheating</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Connection errors during matchmaking or voting phases. What should I do?</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Network connectivity is crucial for Fire Emblem Shadows' social features. Connection issues can be resolved by:</p>
+                            <ul>
+                                <li>Switching between WiFi and mobile data to test connection stability</li>
+                                <li>Restarting your router or checking with your internet service provider</li>
+                                <li>Disabling VPN services that might interfere with game servers</li>
+                                <li>Checking if your firewall or network settings block game traffic</li>
+                                <li>Verifying that the game servers aren't undergoing maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>Audio problems or missing sound effects during gameplay.</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Audio issues can affect tactical coordination and gameplay experience:</p>
+                            <ul>
+                                <li>Check device volume settings and ensure the app isn't muted</li>
+                                <li>Verify in-game audio settings and adjust music/effects volumes</li>
+                                <li>Close other audio applications that might conflict</li>
+                                <li>Test with and without headphones to isolate hardware issues</li>
+                                <li>Restart the app to reload audio systems</li>
+                                <li>Check if your device has Do Not Disturb mode affecting app sounds</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>In-app purchases not working or payments being declined.</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Payment issues can prevent access to premium content and convenience features:</p>
+                            <ul>
+                                <li>Verify your payment method has sufficient funds and isn't expired</li>
+                                <li>Check if in-app purchases are enabled in your device settings</li>
+                                <li>For family accounts, ensure the family organizer has approved purchases</li>
+                                <li>Contact your bank if transactions are being blocked as suspicious</li>
+                                <li>Try using a different payment method if available</li>
+                                <li>Contact app store support for payment processing issues</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                            <span>The game is overheating my device or draining battery quickly.</span>
+                            <span class="faq-icon">▼</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Mobile games can be resource-intensive. To reduce device strain:</p>
+                            <ul>
+                                <li>Lower graphics quality and disable unnecessary visual effects</li>
+                                <li>Reduce screen brightness while playing</li>
+                                <li>Take breaks between extended play sessions</li>
+                                <li>Close background apps and services</li>
+                                <li>Play in cooler environments and avoid direct sunlight</li>
+                                <li>Consider using power-saving mode on your device</li>
+                                <li>Remove device case if it traps heat during gaming</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="related-links">
+                    <h2>Still Need Help?</h2>
+                    <p>If you couldn't find the answer you're looking for, check out these additional resources:</p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
+                        <a href="/download.html" class="btn btn-primary">Download Guide</a>
+                        <a href="/deduction-guide.html" class="btn btn-primary">Gameplay Help</a>
+                        <a href="/updates.html" class="btn btn-primary">Latest Updates</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps">
+            <div class="container">
+                <h2>Ready to Play?</h2>
+                <p>Get Fire Emblem Shadows and start your social deduction adventure</p>
+                <a href="/download.html" class="btn btn-primary">Download Now</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Is Fire Emblem Shadows free-to-start?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Yes, Fire Emblem Shadows follows a free-to-start model. You can download and begin playing without any upfront costs. The game includes optional in-app purchases for cosmetic items, progression acceleration, and premium currency, but core gameplay features remain accessible to all players."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Which platforms and regions support Fire Emblem Shadows?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Fire Emblem Shadows is currently available on iOS and Android devices. Regional availability may vary depending on your location, with releases often rolling out gradually across different markets."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is this the same as Fire Emblem Echoes: Shadows of Valentia from 2017?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "No, Fire Emblem Shadows is a completely different game from Fire Emblem Echoes: Shadows of Valentia (2017, 3DS). Despite similar names, they are separate titles with different gameplay mechanics, platforms, and development teams."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "How does the social deduction mechanic work?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "The Disciple of Shadow system assigns hidden roles to players each match. Some players are designated as Light faction members, while others secretly play as Disciples of Shadow. During combat phases, all players work together regardless of faction."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does my progress sync across different devices?",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Fire Emblem Shadows supports cross-device progress synchronization through cloud save functionality. You'll need to create and link a game account during initial setup to enable this feature."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "FAQ",
+                        "item": "/faq.html"
+                    }
+                ]
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // FAQ accordion functionality
+        function toggleFAQ(button) {
+            const answer = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-question').forEach(q => {
+                if (q !== button) {
+                    q.setAttribute('aria-expanded', 'false');
+                    q.nextElementSibling.classList.remove('active');
+                }
+            });
+            
+            // Toggle clicked item
+            button.setAttribute('aria-expanded', !isExpanded);
+            answer.classList.toggle('active');
+            
+            // Track FAQ interaction
+            const question = button.querySelector('span').textContent;
+            trackEvent('FAQ', isExpanded ? 'Close' : 'Open', question);
+        }
+
+        // Search functionality
+        function searchFAQ() {
+            const searchTerm = document.getElementById('faq-search-input').value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question span').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = searchTerm === '' ? 'block' : 'none';
+                }
+            });
+            
+            // Track search usage
+            if (searchTerm.length > 2) {
+                trackEvent('FAQ', 'Search', searchTerm);
+            }
+        }
+
+        // Scroll to section functionality
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                section.scrollIntoView({ 
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                trackEvent('FAQ', 'Category Navigate', sectionId);
+            }
+        }
+
+        // Keyboard navigation for FAQ items
+        document.addEventListener('keydown', function(e) {
+            if (e.target.classList.contains('faq-question')) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleFAQ(e.target);
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextQuestion = e.target.parentElement.nextElementSibling?.querySelector('.faq-question');
+                    if (nextQuestion) nextQuestion.focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevQuestion = e.target.parentElement.previousElementSibling?.querySelector('.faq-question');
+                    if (prevQuestion) prevQuestion.focus();
+                }
+            }
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+        });
+
+        // Analytics placeholder
+        function trackEvent(category, action, label) {
+            console.log('Event:', category, action, label);
+        }
+
+        // Track category card clicks
+        document.querySelectorAll('.category-card').forEach(card => {
+            card.addEventListener('click', function() {
+                const categoryName = this.querySelector('h3').textContent;
+                trackEvent('FAQ', 'Category Click', categoryName);
+            });
+        });
+
+        // Track external link clicks
+        document.querySelectorAll('a[href^="/"]').forEach(link => {
+            link.addEventListener('click', function() {
+                trackEvent('FAQ', 'Internal Link', this.href);
+            });
+        });
+    </script>
+</body>
+</html>

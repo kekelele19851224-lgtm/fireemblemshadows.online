@@ -1,0 +1,1024 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Shadows Download (iOS & Android) — Official Links, Requirements & Fixes</title>
+    <meta name="description" content="Download Fire Emblem Shadows on iOS and Android with official links, system requirements, installation steps, and troubleshooting solutions.">
+    <link rel="canonical" href="/download.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .content p {
+            margin: 1rem 0;
+        }
+
+        .content ul, .content ol {
+            margin: 1rem 0 1rem 2rem;
+        }
+
+        .content li {
+            margin: 0.5rem 0;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            min-width: 44px;
+            min-height: 44px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background: #C4A532;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-2);
+            border: 2px solid var(--accent-2);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: var(--accent-2);
+            color: white;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .btn-apple {
+            background: #000;
+            color: white;
+            border: 2px solid #000;
+        }
+
+        .btn-apple:hover, .btn-apple:focus {
+            background: #333;
+            outline: 2px solid #000;
+            outline-offset: 2px;
+        }
+
+        .btn-google {
+            background: #34A853;
+            color: white;
+            border: 2px solid #34A853;
+        }
+
+        .btn-google:hover, .btn-google:focus {
+            background: #2E8B47;
+            outline: 2px solid #34A853;
+            outline-offset: 2px;
+        }
+
+        .platform-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+            scroll-margin-top: 80px;
+        }
+
+        .requirements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .requirement-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+
+        .requirement-card h4 {
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .steps-list {
+            counter-reset: step-counter;
+            list-style: none;
+            margin: 0;
+        }
+
+        .steps-list li {
+            counter-increment: step-counter;
+            position: relative;
+            padding-left: 3rem;
+            margin: 1.5rem 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem 1.5rem 1.5rem 4rem;
+        }
+
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            background: var(--accent);
+            color: #000;
+            border-radius: 50%;
+            width: 2rem;
+            height: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .accordion {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+
+        .accordion-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .accordion-item:last-child {
+            border-bottom: none;
+        }
+
+        .accordion-header {
+            width: 100%;
+            padding: 1.5rem;
+            background: none;
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            min-height: 44px;
+            transition: background-color 0.2s ease;
+        }
+
+        .accordion-header:hover, .accordion-header:focus {
+            background: rgba(212, 175, 55, 0.05);
+            outline: 2px solid var(--accent);
+            outline-offset: -2px;
+        }
+
+        .accordion-content {
+            padding: 0 1.5rem 1.5rem;
+            display: none;
+        }
+
+        .accordion-content.active {
+            display: block;
+        }
+
+        .accordion-icon {
+            transition: transform 0.2s ease;
+        }
+
+        .accordion-header[aria-expanded="true"] .accordion-icon {
+            transform: rotate(180deg);
+        }
+
+        .figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .next-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .requirements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/index.html" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link" aria-current="page">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams &amp; Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <nav aria-label="Breadcrumb" class="breadcrumb">
+            <div class="container">
+                <a href="/index.html">Home</a> ›
+                <a href="/index.html#guides">Guides</a> ›
+                <span aria-current="page">Download Guide</span>
+            </div>
+        </nav>
+        
+        <section class="hero">
+            <div class="container">
+                <h1>Fire Emblem Shadows Download</h1>
+                <p class="hero-subtitle">Get Fire Emblem Shadows on iOS and Android with official links, system requirements, and installation guides</p>
+                
+                <figure class="figure">
+                    <svg width="300" height="150" viewBox="0 0 300 150" role="img" aria-labelledby="download-title">
+                        <title id="download-title">Download on iOS and Android platforms</title>
+                        <rect width="300" height="150" fill="rgba(212, 175, 55, 0.1)" rx="12"/>
+                        <rect x="50" y="40" width="80" height="70" fill="#000" rx="8"/>
+                        <text x="90" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="600">iOS</text>
+                        <rect x="170" y="40" width="80" height="70" fill="#34A853" rx="8"/>
+                        <text x="210" y="85" text-anchor="middle" fill="white" font-size="12" font-weight="600">Android</text>
+                        <path d="M130 75 L170 75" stroke="#D4AF37" stroke-width="3" marker-end="url(#download-arrow)"/>
+                        <text x="150" y="135" text-anchor="middle" fill="#E5E7EB" font-size="14" font-weight="600">Available on Both</text>
+                        <defs>
+                            <marker id="download-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#D4AF37"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Fire Emblem Shadows available for download on iOS and Android devices</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section content">
+            <div class="container">
+                <h2>Official Download Links</h2>
+                <p>Download Fire Emblem Shadows from official sources to ensure security and receive automatic updates. The game is currently available on both iOS and Android platforms.</p>
+                
+                <div class="download-buttons">
+                    <a href="https://shadows.nintendo.com/" class="btn btn-primary" rel="noopener noreferrer" target="_blank">Official Website</a>
+                    <a href="https://apps.apple.com/us/app/fire-emblem-shadows/id6746113513" class="btn btn-apple" rel="noopener noreferrer" target="_blank">📱 App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.nintendo.zaha" class="btn btn-google" rel="noopener noreferrer" target="_blank">📱 Google Play</a>
+                </div>
+                
+                <p><strong>Note:</strong> These are the official download links for Fire Emblem Shadows. Regional availability may vary depending on your location.</p>
+
+                <h2>System Requirements</h2>
+                <p>Ensure your device meets the minimum requirements for optimal Fire Emblem Shadows performance.</p>
+                
+                <div class="requirements-grid">
+                    <div class="requirement-card" id="ios">
+                        <h4>iOS Requirements</h4>
+                        <ul>
+                            <li>iOS 12.0 or later</li>
+                            <li>iPhone 6s or newer</li>
+                            <li>iPad (6th generation) or newer</li>
+                            <li>2GB RAM minimum</li>
+                            <li>3GB free storage space</li>
+                            <li>Stable internet connection</li>
+                        </ul>
+                    </div>
+                    <div class="requirement-card" id="android">
+                        <h4>Android Requirements</h4>
+                        <ul>
+                            <li>Android 7.0 (API level 24) or higher</li>
+                            <li>3GB RAM minimum</li>
+                            <li>64-bit processor support</li>
+                            <li>3GB free storage space</li>
+                            <li>OpenGL ES 3.0 support</li>
+                            <li>Stable internet connection</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <h2>Installation Steps</h2>
+                <p>Follow these simple steps to install Fire Emblem Shadows on your device:</p>
+                
+                <ol class="steps-list">
+                    <li>
+                        <strong>Download the game</strong><br>
+                        Visit your device's official app store (App Store for iOS, Google Play for Android) and search for "Fire Emblem Shadows" or use the direct links above.
+                    </li>
+                    <li>
+                        <strong>Install and launch</strong><br>
+                        Tap "Install" or "Get" to download the game. Once installation completes, tap the game icon to launch Fire Emblem Shadows.
+                    </li>
+                    <li>
+                        <strong>Initial setup</strong><br>
+                        Complete the initial tutorial and account setup. The game will download additional assets during first launch, which may take a few minutes.
+                    </li>
+                    <li>
+                        <strong>Start playing</strong><br>
+                        Begin with the tutorial missions to learn Fire Emblem Shadows mechanics before diving into social deduction gameplay.
+                    </li>
+                </ol>
+
+                <figure class="figure">
+                    <svg width="320" height="120" viewBox="0 0 320 120" role="img" aria-labelledby="install-title">
+                        <title id="install-title">Installation process in three simple steps</title>
+                        <rect width="320" height="120" fill="rgba(37, 99, 235, 0.1)" rx="8"/>
+                        <circle cx="60" cy="60" r="25" fill="#D4AF37"/>
+                        <text x="60" y="67" text-anchor="middle" fill="#000" font-size="16" font-weight="700">1</text>
+                        <circle cx="160" cy="60" r="25" fill="#D4AF37"/>
+                        <text x="160" y="67" text-anchor="middle" fill="#000" font-size="16" font-weight="700">2</text>
+                        <circle cx="260" cy="60" r="25" fill="#D4AF37"/>
+                        <text x="260" y="67" text-anchor="middle" fill="#000" font-size="16" font-weight="700">3</text>
+                        <path d="M85 60 L135 60 M185 60 L235 60" stroke="#E5E7EB" stroke-width="2" marker-end="url(#step-arrow)"/>
+                        <text x="60" y="105" text-anchor="middle" fill="#E5E7EB" font-size="10">Download</text>
+                        <text x="160" y="105" text-anchor="middle" fill="#E5E7EB" font-size="10">Install</text>
+                        <text x="260" y="105" text-anchor="middle" fill="#E5E7EB" font-size="10">Play</text>
+                        <defs>
+                            <marker id="step-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+                                <polygon points="0 0, 8 3, 0 6" fill="#E5E7EB"/>
+                            </marker>
+                        </defs>
+                    </svg>
+                    <figcaption>Simple three-step installation process for Fire Emblem Shadows</figcaption>
+                </figure>
+
+                <h2>Troubleshooting</h2>
+                <p>Common download and installation issues with Fire Emblem Shadows and their solutions:</p>
+                
+                <div class="accordion">
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Game not available in my region</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Fire Emblem Shadows availability varies by region. If the game isn't available in your area, check back periodically as releases often roll out gradually. Avoid unofficial sources or modified APK files for security reasons.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Stuck on loading screen</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Try these solutions: 1) Check your internet connection stability, 2) Restart the app completely, 3) Clear the app cache (Android) or reinstall (iOS), 4) Ensure you have sufficient storage space for additional downloads.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Insufficient storage error</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Fire Emblem Shadows requires additional space beyond the initial download for game assets and updates. Free up at least 4GB of storage space and try again. Consider moving photos/videos to cloud storage or removing unused apps.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Network connection issues</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Ensure stable WiFi or cellular connection. Try switching between WiFi and mobile data. Disable VPN if active, as it may interfere with downloads. For public WiFi, check if gaming apps are blocked by network restrictions.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Age verification or account issues</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Fire Emblem Shadows may have age restrictions. Ensure your app store account birthdate meets requirements. For family accounts, check parental controls settings that might block game downloads or in-app purchases.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>App crashes on launch</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Device compatibility issues can cause crashes. Verify your device meets system requirements. Close other apps to free up RAM. Restart your device and try launching again. If problems persist, reinstall the game.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Unable to make in-app purchases</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Check your payment method is valid and has sufficient funds. Verify in-app purchases aren't disabled in device settings. For family accounts, ensure the family organizer has approved purchases. Contact your app store support for payment issues.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <button class="accordion-header" aria-expanded="false" onclick="toggleAccordion(this)">
+                            <span>Game data won't sync across devices</span>
+                            <span class="accordion-icon">▼</span>
+                        </button>
+                        <div class="accordion-content">
+                            <p>Ensure you're logged into the same game account on both devices. Check that cloud save is enabled in game settings. Some progress may require manual sync through the game's account system rather than automatic device backup.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h2>In-App Purchase Overview</h2>
+                <p>Fire Emblem Shadows follows a free-to-start model with optional in-app purchases. Understanding the monetization system helps you make informed decisions about spending.</p>
+                
+                <div class="platform-section">
+                    <h3>What to Expect</h3>
+                    <ul>
+                        <li><strong>Free-to-start:</strong> Download and begin playing without upfront costs</li>
+                        <li><strong>Optional purchases:</strong> Cosmetic items, progression boosters, and premium currency</li>
+                        <li><strong>No pay-to-win:</strong> Core gameplay and social deduction mechanics remain fair for all players</li>
+                        <li><strong>Parental controls:</strong> Disable in-app purchases in device settings if needed</li>
+                    </ul>
+                    
+                    <h3>Tips for Parents</h3>
+                    <ul>
+                        <li>Review and set spending limits through your app store account</li>
+                        <li>Enable purchase confirmation requirements</li>
+                        <li>Discuss in-game spending with children before they start playing</li>
+                        <li>Regularly check purchase history in your app store account</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section aria-labelledby="next-steps" class="section next-steps">
+            <div class="container">
+                <h2 id="next-steps">Next steps</h2>
+                <div class="grid-auto">
+                    <a class="card" href="/what-is.html">
+                        <h3>What is Fire Emblem Shadows</h3>
+                        <p>Learn the basics and core mechanics of the game.</p>
+                    </a>
+                    <a class="card" href="/teams-gear.html">
+                        <h3>Teams & Gear (learn basics)</h3>
+                        <p>Build your first squad and understand role synergy.</p>
+                    </a>
+                    <a class="card" href="/deduction-guide.html">
+                        <h3>Voting guide</h3>
+                        <p>Master social deduction and voting strategies.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "HowTo",
+                "name": "How to Download and Install Fire Emblem Shadows",
+                "description": "Step-by-step guide to download Fire Emblem Shadows on iOS and Android",
+                "image": "/download-steps.svg",
+                "supply": [
+                    {
+                        "@type": "HowToSupply",
+                        "name": "iOS or Android device"
+                    },
+                    {
+                        "@type": "HowToSupply", 
+                        "name": "Stable internet connection"
+                    },
+                    {
+                        "@type": "HowToSupply",
+                        "name": "3GB free storage space"
+                    }
+                ],
+                "step": [
+                    {
+                        "@type": "HowToStep",
+                        "name": "Download the game",
+                        "text": "Visit your device's official app store and search for Fire Emblem Shadows",
+                        "image": "/step1.svg"
+                    },
+                    {
+                        "@type": "HowToStep", 
+                        "name": "Install and launch",
+                        "text": "Tap Install to download, then launch the game from your home screen",
+                        "image": "/step2.svg"
+                    },
+                    {
+                        "@type": "HowToStep",
+                        "name": "Complete setup",
+                        "text": "Follow the tutorial and allow additional asset downloads to complete",
+                        "image": "/step3.svg"
+                    }
+                ]
+            },
+            {
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Game not available in my region",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Fire Emblem Shadows availability varies by region. Check back periodically as releases often roll out gradually. Avoid unofficial sources for security reasons."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Stuck on loading screen",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Check internet connection, restart the app, clear cache or reinstall, and ensure sufficient storage space for additional downloads."
+                        }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Insufficient storage error",
+                        "acceptedAnswer": {
+                            "@type": "Answer",
+                            "text": "Fire Emblem Shadows requires at least 4GB total space. Free up storage by moving photos to cloud storage or removing unused apps."
+                        }
+                    }
+                ]
+            },
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Download",
+                        "item": "/download.html"
+                    }
+                ]
+            },
+            {
+                "@type": "ImageObject",
+                "url": "/download-hero.svg",
+                "width": 300,
+                "height": 150,
+                "description": "Fire Emblem Shadows download on iOS and Android"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // Accordion functionality
+        function toggleAccordion(button) {
+            const content = button.nextElementSibling;
+            const isExpanded = button.getAttribute('aria-expanded') === 'true';
+            
+            // Close all accordions
+            document.querySelectorAll('.accordion-header').forEach(header => {
+                header.setAttribute('aria-expanded', 'false');
+                header.nextElementSibling.classList.remove('active');
+            });
+            
+            // Open clicked accordion if it was closed
+            if (!isExpanded) {
+                button.setAttribute('aria-expanded', 'true');
+                content.classList.add('active');
+            }
+        }
+
+        // Keyboard navigation for accordions
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleAccordion(this);
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextButton = this.parentElement.nextElementSibling?.querySelector('.accordion-header');
+                    if (nextButton) nextButton.focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevButton = this.parentElement.previousElementSibling?.querySelector('.accordion-header');
+                    if (prevButton) prevButton.focus();
+                }
+            });
+        });
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+        });
+
+        // Analytics placeholder
+        function trackEvent(category, action, label) {
+            console.log('Event:', category, action, label);
+        }
+
+        // Track download button clicks
+        document.querySelectorAll('.btn').forEach(button => {
+            button.addEventListener('click', function() {
+                trackEvent('Download', 'Click', this.textContent);
+            });
+        });
+
+        // Auto-generate H2/H3 anchors + self-links
+        (function(){
+            const slug = s => s.toLowerCase().trim().replace(/[^a-z0-9\s-]/g,'').replace(/\s+/g,'-').replace(/-+/g,'-');
+            document.querySelectorAll('h2,h3').forEach(h => {
+                if(!h.id) h.id = slug(h.textContent);
+                if(!h.querySelector('.h-anchor')){
+                    const a = document.createElement('a');
+                    a.href = `#${h.id}`;
+                    a.className = 'h-anchor';
+                    a.setAttribute('aria-label','Link to this section');
+                    a.textContent = '¶';
+                    h.appendChild(a);
+                }
+            });
+        })();
+
+        // Internal link click tracking
+        document.addEventListener('click', e => {
+            const a = e.target.closest('a[href]');
+            if(!a) return;
+            const url = new URL(a.href, location.origin);
+            if(url.origin === location.origin){ // internal
+                console.log('internal_link_click', {href:url.pathname + url.hash, text:a.textContent.trim()});
+            }
+        });
+    </script>
+
+    <script id="link-map" type="application/json">
+    {
+      "home": "/index.html",
+      "download": "/download.html",
+      "whatis": "/what-is.html",
+      "voting": "/deduction-guide.html",
+      "teams": "/teams-gear.html",
+      "bazaar": "/bazaar.html",
+      "updates": "/updates.html",
+      "faq": "/faq.html"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context":"https://schema.org",
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"/index.html"},
+        {"@type":"ListItem","position":2,"name":"Guides","item":"/index.html#guides"},
+        {"@type":"ListItem","position":3,"name":"Download Guide","item":"/download.html"}
+      ]
+    }
+    </script>
+
+    <style>
+        .breadcrumb{font-size:.95rem;opacity:.9;margin:8px 0 12px}
+        .breadcrumb a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+        .h-anchor{margin-left:.5rem;font-weight:600;opacity:.6}
+        .h-anchor:focus,.h-anchor:hover{opacity:1;outline:2px solid currentColor;outline-offset:2px}
+        .grid-auto{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+        .card{display:block;padding:16px;border-radius:14px;border:1px solid rgba(255,255,255,.08);background:var(--card-bg, rgba(255,255,255,.04));text-decoration:none;color:inherit;transition:all 0.2s ease}
+        .card:hover,.card:focus{transform:translateY(-2px);box-shadow:0 8px 24px rgba(212, 175, 55, 0.1);border-color:var(--accent);outline:2px solid var(--accent);outline-offset:2px}
+        .card h3{margin:0 0 4px;color:var(--accent)}
+        .card p{margin:0;opacity:.9}
+    </style>
+</body>
+</html>

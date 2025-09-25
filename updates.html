@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fire Emblem Shadows Updates & Events Timeline</title>
+    <meta name="description" content="Stay updated with Fire Emblem Shadows latest patches, events, timeline, and community updates for the mobile social deduction RPG.">
+    <link rel="canonical" href="/updates.html">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-RX55E9N7CG"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RX55E9N7CG');
+    </script>
+
+    <style>
+        :root {
+            --bg: #FAFAF9;
+            --bg-dark: #0F172A;
+            --card: #FFFFFF;
+            --card-dark: rgba(255,255,255,0.04);
+            --text: #0B1220;
+            --text-dark: #E5E7EB;
+            --accent: #D4AF37;
+            --accent-2: #2563EB;
+            --border: rgba(0,0,0,0.1);
+            --border-dark: rgba(255,255,255,0.1);
+        }
+
+        [data-theme="dark"] {
+            --bg: var(--bg-dark);
+            --card: var(--card-dark);
+            --text: var(--text-dark);
+            --border: var(--border-dark);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Noto Sans", Helvetica, Arial, "Noto Sans SC", sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 6px;
+            background: var(--accent);
+            color: #000;
+            padding: 8px;
+            text-decoration: none;
+            border-radius: 4px;
+            z-index: 1000;
+            font-weight: 600;
+        }
+
+        .skip-link:focus {
+            top: 6px;
+        }
+
+        .header {
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 64px;
+        }
+
+        .logo {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 0;
+            transition: color 0.2s ease;
+        }
+
+        .nav-link:hover, .nav-link:focus {
+            color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.2s ease;
+            z-index: 10;
+        }
+
+        .dropdown:hover .dropdown-content,
+        .dropdown:focus-within .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-link {
+            display: block;
+            padding: 12px 16px;
+            color: var(--text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .dropdown-link:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .theme-toggle {
+            background: none;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            padding: 8px 12px;
+            color: var(--text);
+            cursor: pointer;
+            font-size: 0.9rem;
+            min-width: 44px;
+            min-height: 44px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover, .theme-toggle:focus {
+            border-color: var(--accent);
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 16px;
+        }
+
+        .hero {
+            padding: 3rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(37, 99, 235, 0.1));
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .section {
+            padding: 3rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: rgba(212, 175, 55, 0.02);
+        }
+
+        .content h2 {
+            color: var(--accent);
+            margin: 2rem 0 1rem;
+            font-size: 1.8rem;
+        }
+
+        .content h3 {
+            color: var(--text);
+            margin: 1.5rem 0 1rem;
+            font-size: 1.3rem;
+        }
+
+        .content p {
+            margin: 1rem 0;
+        }
+
+        .content a {
+            color: var(--accent-2);
+            text-decoration: none;
+        }
+
+        .content a:hover, .content a:focus {
+            text-decoration: underline;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.2s ease;
+            min-width: 44px;
+            min-height: 44px;
+            text-align: center;
+            border: 2px solid transparent;
+        }
+
+        .btn-primary {
+            background: var(--accent);
+            color: #000;
+        }
+
+        .btn-primary:hover, .btn-primary:focus {
+            background: #C4A532;
+            outline: 2px solid var(--accent);
+            outline-offset: 2px;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-2);
+            border: 2px solid var(--accent-2);
+        }
+
+        .btn-secondary:hover, .btn-secondary:focus {
+            background: var(--accent-2);
+            color: white;
+            outline: 2px solid var(--accent-2);
+            outline-offset: 2px;
+        }
+
+        .timeline {
+            position: relative;
+            margin: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 2rem 0;
+            padding-left: 80px;
+        }
+
+        .timeline-date {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 60px;
+            height: 60px;
+            background: var(--card);
+            border: 3px solid var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--accent);
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .timeline-content {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .timeline-title {
+            color: var(--accent);
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-summary {
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-details {
+            margin-top: 1rem;
+        }
+
+        .timeline-details ul {
+            margin: 0.5rem 0 0.5rem 1.5rem;
+        }
+
+        .timeline-details li {
+            margin: 0.25rem 0;
+        }
+
+        .update-type {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .update-type.patch {
+            background: rgba(37, 99, 235, 0.1);
+            color: var(--accent-2);
+        }
+
+        .update-type.event {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--accent);
+        }
+
+        .update-type.balance {
+            background: rgba(52, 168, 83, 0.1);
+            color: #34A853;
+        }
+
+        .update-type.feature {
+            background: rgba(139, 90, 60, 0.1);
+            color: #8B5A3C;
+        }
+
+        .subscribe-section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .subscribe-form {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+
+        .subscribe-input {
+            padding: 12px 16px;
+            border: 2px solid var(--border);
+            border-radius: 8px;
+            font-size: 1rem;
+            background: var(--bg);
+            color: var(--text);
+            min-width: 250px;
+            transition: border-color 0.2s ease;
+        }
+
+        .subscribe-input:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+
+        .subscribe-input::placeholder {
+            color: var(--text);
+            opacity: 0.6;
+        }
+
+        .figure {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .figure svg {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .figure figcaption {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.8;
+        }
+
+        .next-steps {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .footer {
+            background: var(--card);
+            border-top: 1px solid var(--border);
+            padding: 2rem 0;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .footer-disclaimer {
+            font-size: 0.9rem;
+            color: var(--text);
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            
+            .hero {
+                padding: 2rem 0;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .timeline::before {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                padding-left: 60px;
+            }
+            
+            .timeline-date {
+                width: 40px;
+                height: 40px;
+                font-size: 0.7rem;
+            }
+            
+            .subscribe-form {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .subscribe-input {
+                min-width: 200px;
+            }
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: var(--bg-dark);
+                --card: var(--card-dark);
+                --text: var(--text-dark);
+                --border: var(--border-dark);
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#skip" class="skip-link">Skip to main content</a>
+    
+    <header class="header">
+        <nav class="nav">
+            <a href="/" class="logo">Fire Emblem Shadows</a>
+            <ul class="nav-links">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/download.html" class="nav-link">Download</a></li>
+                <li><a href="/what-is.html" class="nav-link">What is</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link" aria-expanded="false">Guides ▼</a>
+                    <div class="dropdown-content">
+                        <a href="/deduction-guide.html" class="dropdown-link">Voting</a>
+                        <a href="/teams-gear.html" class="dropdown-link">Teams & Gear</a>
+                        <a href="/bazaar.html" class="dropdown-link">Bazaar</a>
+                    </div>
+                </li>
+                <li><a href="/faq.html" class="nav-link">FAQ</a></li>
+                <li><a href="/updates.html" class="nav-link">Updates</a></li>
+            </ul>
+            <button class="theme-toggle" onclick="toggleTheme()">🌓</button>
+        </nav>
+    </header>
+
+    <main id="skip">
+        <section class="hero">
+            <div class="container">
+                <h1>Fire Emblem Shadows Updates</h1>
+                <p class="hero-subtitle">Stay current with Fire Emblem Shadows patches, events, and community updates</p>
+                
+                <figure class="figure">
+                    <svg width="350" height="180" viewBox="0 0 350 180" role="img" aria-labelledby="calendar-title">
+                        <title id="calendar-title">Update timeline calendar showing patch releases and events</title>
+                        <rect width="350" height="180" fill="rgba(212, 175, 55, 0.1)" rx="12"/>
+                        
+                        <!-- Calendar grid -->
+                        <rect x="30" y="30" width="290" height="120" fill="rgba(255, 255, 255, 0.1)" stroke="#E5E7EB" stroke-width="1" rx="8"/>
+                        
+                        <!-- Calendar header -->
+                        <rect x="30" y="30" width="290" height="25" fill="rgba(212, 175, 55, 0.2)" rx="8 8 0 0"/>
+                        <text x="175" y="47" text-anchor="middle" fill="#D4AF37" font-size="12" font-weight="700">Update Calendar</text>
+                        
+                        <!-- Calendar days -->
+                        <rect x="50" y="70" width="30" height="25" fill="rgba(37, 99, 235, 0.3)" rx="4"/>
+                        <text x="65" y="85" text-anchor="middle" fill="#2563EB" font-size="10" font-weight="600">15</text>
+                        
+                        <rect x="100" y="70" width="30" height="25" fill="rgba(52, 168, 83, 0.3)" rx="4"/>
+                        <text x="115" y="85" text-anchor="middle" fill="#34A853" font-size="10" font-weight="600">22</text>
+                        
+                        <rect x="200" y="70" width="30" height="25" fill="rgba(212, 175, 55, 0.3)" rx="4"/>
+                        <text x="215" y="85" text-anchor="middle" fill="#D4AF37" font-size="10" font-weight="600">30</text>
+                        
+                        <rect x="100" y="110" width="30" height="25" fill="rgba(139, 90, 60, 0.3)" rx="4"/>
+                        <text x="115" y="125" text-anchor="middle" fill="#8B5A3C" font-size="10" font-weight="600">8</text>
+                        
+                        <!-- Legend -->
+                        <circle cx="50" cy="165" r="4" fill="#2563EB"/>
+                        <text x="60" y="169" fill="#E5E7EB" font-size="8">Patch</text>
+                        
+                        <circle cx="100" cy="165" r="4" fill="#34A853"/>
+                        <text x="110" y="169" fill="#E5E7EB" font-size="8">Balance</text>
+                        
+                        <circle cx="160" cy="165" r="4" fill="#D4AF37"/>
+                        <text x="170" y="169" fill="#E5E7EB" font-size="8">Event</text>
+                        
+                        <circle cx="210" cy="165" r="4" fill="#8B5A3C"/>
+                        <text x="220" y="169" fill="#E5E7EB" font-size="8">Feature</text>
+                    </svg>
+                    <figcaption>Fire Emblem Shadows update calendar showing different types of releases and events</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="section content">
+            <div class="container">
+                <h2>Latest Updates Timeline</h2>
+                <p>Track Fire Emblem Shadows development progress with our comprehensive update timeline. Each entry includes patch notes, event details, and community impact information.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Sep<br>25
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type patch">System Patch</div>
+                            <h3 class="timeline-title">Stability Improvements Update</h3>
+                            <p class="timeline-summary">Enhanced server performance and resolved connectivity issues affecting social deduction matchmaking.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Reduced connection timeouts during voting phases</li>
+                                    <li>Improved real-time combat synchronization</li>
+                                    <li>Fixed rare bazaar transaction errors</li>
+                                    <li>Enhanced anti-cheat protection for competitive play</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Sep<br>18
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type event">Seasonal Event</div>
+                            <h3 class="timeline-title">Autumn Shadow Festival</h3>
+                            <p class="timeline-summary">Limited-time event featuring exclusive cosmetics, bonus experience rates, and special challenge encounters.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Event-exclusive character skins and equipment designs</li>
+                                    <li>Double experience points for successful social deduction rounds</li>
+                                    <li>Special "Festival of Shadows" game mode with unique mechanics</li>
+                                    <li>Collectible festival tokens exchangeable for rare items</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Sep<br>10
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type balance">Balance Update</div>
+                            <h3 class="timeline-title">Combat Role Adjustments</h3>
+                            <p class="timeline-summary">Comprehensive rebalancing of character roles based on community feedback and competitive play data analysis.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Frontliner role: Increased crowd control duration by 15%</li>
+                                    <li>Support role: Enhanced healing efficiency and reduced cooldowns</li>
+                                    <li>Burst DPS: Adjusted damage scaling for better late-game balance</li>
+                                    <li>Control role: Refined area-of-effect abilities for clearer counterplay</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Sep<br>3
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type feature">New Feature</div>
+                            <h3 class="timeline-title">Enhanced Team Coordination Tools</h3>
+                            <p class="timeline-summary">New communication features designed to improve team coordination during both combat and social deduction phases.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Quick communication wheel with contextual callouts</li>
+                                    <li>Improved ping system for tactical marking</li>
+                                    <li>Post-match analysis tools for reviewing team performance</li>
+                                    <li>Custom team formation presets for faster setup</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Aug<br>27
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type patch">Quality of Life</div>
+                            <h3 class="timeline-title">User Interface Improvements</h3>
+                            <p class="timeline-summary">Streamlined user experience with improved navigation, better accessibility options, and enhanced mobile optimization.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Redesigned bazaar interface for easier item browsing</li>
+                                    <li>Accessibility improvements for colorblind players</li>
+                                    <li>Enhanced touch controls for mobile devices</li>
+                                    <li>Improved loading times for match initialization</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Aug<br>20
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type event">Community Challenge</div>
+                            <h3 class="timeline-title">Global Deduction Tournament</h3>
+                            <p class="timeline-summary">Community-wide tournament testing advanced social deduction skills with leaderboards and exclusive rewards.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Cross-regional tournament brackets</li>
+                                    <li>Spectator mode for watching high-level matches</li>
+                                    <li>Tournament-exclusive titles and cosmetic rewards</li>
+                                    <li>Prize pool distribution based on final rankings</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Aug<br>13
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type balance">Economy Adjustments</div>
+                            <h3 class="timeline-title">Bazaar Economy Rebalancing</h3>
+                            <p class="timeline-summary">Comprehensive review of in-game economy with adjustments to item values, currency earning rates, and trading fees.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Reduced transaction fees for new players</li>
+                                    <li>Increased gold rewards for successful deduction rounds</li>
+                                    <li>Rebalanced rare item drop rates and market values</li>
+                                    <li>New reputation system bonuses for consistent traders</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item">
+                        <div class="timeline-date">
+                            Aug<br>6
+                        </div>
+                        <div class="timeline-content">
+                            <div class="update-type feature">Social Features</div>
+                            <h3 class="timeline-title">Guild System Implementation</h3>
+                            <p class="timeline-summary">Introduction of guild mechanics allowing players to form persistent groups for enhanced social play and coordination.</p>
+                            <div class="timeline-details">
+                                <ul>
+                                    <li>Guild creation and management tools</li>
+                                    <li>Guild-vs-guild tournament modes</li>
+                                    <li>Shared guild resources and progression tracking</li>
+                                    <li>Guild-exclusive challenges and rewards</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="subscribe-section">
+                    <h2>Stay Updated</h2>
+                    <p>Never miss Fire Emblem Shadows updates, events, or important community announcements. Subscribe to receive notifications about new patches, seasonal events, and game news.</p>
+                    
+                    <form class="subscribe-form" onsubmit="handleSubscribe(event)">
+                        <input 
+                            type="email" 
+                            class="subscribe-input" 
+                            placeholder="Enter your email address"
+                            required
+                            aria-label="Email address for updates"
+                        >
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </form>
+                    
+                    <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 1rem;">
+                        <strong>Alternative options:</strong> 
+                        <a href="#" class="btn btn-secondary" style="margin: 0 0.5rem; padding: 8px 16px; font-size: 0.9rem;">RSS Feed</a>
+                        <a href="#" class="btn btn-secondary" style="margin: 0 0.5rem; padding: 8px 16px; font-size: 0.9rem;">Discord Notifications</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="next-steps">
+            <div class="container">
+                <h2>Need Help Getting Started?</h2>
+                <p>Check our comprehensive FAQ for answers to common Fire Emblem Shadows questions</p>
+                <a href="/faq.html" class="btn btn-primary">View FAQ</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-disclaimer">
+                Fan-made hub. Not affiliated with Nintendo or Intelligent Systems.<br>
+                This unofficial guide is created by fans for educational and informational purposes.
+            </p>
+        </div>
+    </footer>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@graph": [
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Updates",
+                        "item": "/updates.html"
+                    }
+                ]
+            },
+            {
+                "@type": "ImageObject",
+                "url": "/updates-calendar.svg",
+                "width": 350,
+                "height": 180,
+                "description": "Update timeline calendar showing patch releases and events"
+            }
+        ]
+    }
+    </script>
+
+    <script>
+        // Theme toggle functionality
+        function toggleTheme() {
+            const body = document.body;
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+        }
+
+        // Initialize theme from localStorage or system preference
+        function initTheme() {
+            const savedTheme = localStorage.getItem('theme');
+            const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = savedTheme || (systemPrefersDark ? 'dark' : 'light');
+            
+            document.body.setAttribute('data-theme', theme);
+        }
+
+        // Handle newsletter subscription
+        function handleSubscribe(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            
+            // In a real implementation, this would connect to a newsletter service
+            alert('Thank you for subscribing! You\'ll receive Fire Emblem Shadows updates at ' + email);
+            
+            // Track subscription event
+            trackEvent('Newsletter', 'Subscribe', email);
+            
+            // Reset form
+            event.target.reset();
+        }
+
+        // Timeline interaction tracking
+        function initTimelineTracking() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+            timelineItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    const updateTitle = this.querySelector('.timeline-title').textContent;
+                    const updateType = this.querySelector('.update-type').textContent;
+                    trackEvent('Timeline', 'View Update', updateType + ': ' + updateTitle);
+                });
+            });
+        }
+
+        // Initialize on load
+        document.addEventListener('DOMContentLoaded', function() {
+            initTheme();
+            initTimelineTracking();
+        });
+
+        // Analytics placeholder
+        function trackEvent(category, action, label) {
+            console.log('Event:', category, action, label);
+        }
+
+        // Track update type interest
+        document.querySelectorAll('.update-type').forEach(type => {
+            type.addEventListener('click', function() {
+                trackEvent('Updates', 'Filter Interest', this.textContent);
+            });
+        });
+
+        // Intersection Observer for timeline visibility tracking
+        const timelineObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const updateTitle = entry.target.querySelector('.timeline-title')?.textContent;
+                    if (updateTitle) {
+                        trackEvent('Timeline', 'View', updateTitle);
+                    }
+                }
+            });
+        }, { threshold: 0.5 });
+
+        // Observe timeline items
+        document.querySelectorAll('.timeline-item').forEach(item => {
+            timelineObserver.observe(item);
+        });
+    </script>
+</body>
+</html>
