@@ -770,6 +770,10 @@
                 <a href="/faq.html" class="btn btn-primary">View FAQ</a>
             </div>
         </section>
+
+        <!-- Adsterra: native/banner widget -->
+        <div class="ad-slot" id="container-cb6b90d40f64ffbf1dba948e66f8aaf0"></div>
+        <script async="async" data-cfasync="false" src="//pl27719199.revenuecpmgate.com/cb6b90d40f64ffbf1dba948e66f8aaf0/invoke.js"></script>
     </main>
 
     <footer class="footer">
@@ -895,5 +899,21 @@
             timelineObserver.observe(item);
         });
     </script>
+
+    <style>
+        /* Ad slot: consistent spacing, avoid CLS, responsive width */
+        .ad-slot{
+            width:100%;
+            min-height:280px;          /* reserve space to reduce layout shift */
+            margin:20px 0 8px;
+            display:block;
+            border-radius:12px;
+            border:1px solid rgba(255,255,255,.08);
+            background:var(--card, rgba(255,255,255,.04));
+        }
+        @media (min-width:1024px){
+            .ad-slot{ min-height:300px; margin:28px 0 12px; }
+        }
+    </style>
 </body>
 </html>
