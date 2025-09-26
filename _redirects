@@ -1,0 +1,27 @@
+# --- 首页规范化 ---
+/index.html        /                              301
+
+# --- Blog 统一为带斜杠版本 ---
+/blog              /blog/                         301
+/blog/index.html   /blog/                         301
+
+# --- 去掉 .html（显式列出核心页面，便于审计） ---
+/download.html         /download                  301
+/what-is.html          /what-is                   301
+/deduction-guide.html  /deduction-guide           301
+/teams-gear.html       /teams-gear                301
+/bazaar.html           /bazaar                    301
+/faq.html              /faq                       301
+/updates.html          /updates                   301
+
+# --- 规范结尾斜杠（除 blog 外，其他都去掉斜杠） ---
+/download/             /download                  301
+/what-is/              /what-is                   301
+/deduction-guide/      /deduction-guide           301
+/teams-gear/           /teams-gear                301
+/bazaar/               /bazaar                    301
+/faq/                  /faq                       301
+/updates/              /updates                   301
+
+# --- 兜底规则：去掉任意 .html（放在最后，优先级最低） ---
+/*.html                /:splat                    301
