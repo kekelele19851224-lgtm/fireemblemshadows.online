@@ -7,3 +7,4 @@ Sitemap: /sitemap.xml
 # This site provides helpful guides and information for players
 
 # No restrictions - all content is public and helpful for users
+

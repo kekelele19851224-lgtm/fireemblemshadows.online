@@ -116,3 +116,4 @@ Any static host works (GitHub Pages, Netlify, Vercel, S3, etc.):
 - This project is for educational and community purposes only.
 
 **Visit the live site:** [fire emblem shadows](https://fireemblemshadows.online)
+
